@@ -16,10 +16,7 @@ export default function Button({
     href,
     ...props
 }: ButtonProps) {
-    const className = renderClasses(
-        'btn',
-        variant === 'secondary' ? 'btn-secondary' : 'btn-primary'
-    )
+    const className = renderClasses('btn', `btn-${variant}`)
 
     if (href) {
         return (

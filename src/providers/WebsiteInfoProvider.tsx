@@ -33,6 +33,9 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                 },
                 pages: [
                     { label: 'Home', href: '/' },
+                    { label: 'About', href: '/about' },
+                    { label: 'Services', href: '/services', isNotInNav: true },
+                    { label: 'Contact Us', href: '/contact', isNotInNav: true },
                     {
                         label: 'Privacy Policy',
                         href: '/privacy',
@@ -45,7 +48,7 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                     },
                     {
                         label: 'Penetration Testing',
-                        href: '/service/:id',
+                        href: '/services/pen-test',
                         isService: true,
                     },
                 ],

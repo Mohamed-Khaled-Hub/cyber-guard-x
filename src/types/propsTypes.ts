@@ -28,7 +28,7 @@ export type InputProps = {
 
 // Button Types (Handling render it as <a> or <button>)
 export type CommonButtonProps = {
-    variant?: 'primary' | 'secondary'
+    variant?: 'primary' | 'secondary' | 'gradient'
     label: string
 }
 
@@ -50,3 +50,8 @@ export type ButtonProps = ButtonOnlyProps | LinkOnlyProps
 export type AllProvidersProps = PropsWithChildren
 
 export type WebsiteInfoProviderProps = PropsWithChildren
+
+// Dynamic Page
+export type ServicesPageParamsType = {
+    params: Promise<{ name: string }>
+}

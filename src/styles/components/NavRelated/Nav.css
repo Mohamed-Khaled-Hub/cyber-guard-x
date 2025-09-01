@@ -2,7 +2,7 @@
 
 nav.nav {
     @apply fixed w-full h-(--nav-height) top-0 left-0 z-(--nav-z-index) flex items-center;
-    @apply bg-white border-b border-black shadow-md;
+    @apply bg-c1 shadow-md md:px-6;
 }
 
 div.nav-inner {
@@ -18,7 +18,7 @@ li.nav-item {
 }
 
 a.nav-link {
-    @apply text-neutral-700 font-medium transition-colors duration-200 hover:text-black;
+    @apply text-neutral-400 font-medium transition-colors duration-200 hover:text-white;
 }
 
 div.nav-actions {

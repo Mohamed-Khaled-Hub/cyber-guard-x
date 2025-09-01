@@ -29,5 +29,6 @@ export type WebsiteInfoContextType = {
         href: string
         isService?: boolean
         isFooter?: boolean
+        isNotInNav?: boolean
     }[]
 }
