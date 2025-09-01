@@ -1,0 +1,26 @@
+@import '../../globals.css';
+
+div.input-field {
+    @apply flex flex-col gap-2 w-full;
+}
+
+label.input-label {
+    @apply text-sm font-medium;
+}
+
+label.input-label-error {
+    @apply text-red-500;
+}
+
+input.input-box {
+    @apply px-3 py-2 rounded-md border shadow-sm focus:outline-none focus:ring transition disabled:cursor-not-allowed;
+    @apply bg-white border-black focus:ring-neutral-400 disabled:bg-gray-100;
+}
+
+input.input-error {
+    @apply border-red-500 focus:border-black focus:ring-red-500;
+}
+
+p.input-error-message {
+    @apply text-xs text-red-500 mt-1;
+}

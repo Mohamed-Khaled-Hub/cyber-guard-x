@@ -1,0 +1,26 @@
+@import '../../globals.css';
+
+nav.nav {
+    @apply fixed w-full h-(--nav-height) top-0 left-0 z-(--nav-z-index) flex items-center;
+    @apply bg-white border-b border-black shadow-md;
+}
+
+div.nav-inner {
+    @apply flex items-center justify-between w-full;
+}
+
+ul.nav-list {
+    @apply flex items-center gap-4;
+}
+
+li.nav-item {
+    @apply list-none;
+}
+
+a.nav-link {
+    @apply text-neutral-700 font-medium transition-colors duration-200 hover:text-black;
+}
+
+div.nav-actions {
+    @apply flex items-center gap-4;
+}

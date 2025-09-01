@@ -1,0 +1,21 @@
+@import 'tailwindcss';
+
+@theme {
+    /* Heights */
+    --nav-height: 120px;
+
+    /* Min Heights */
+    --footer-min-height: 250px;
+
+    /* Z-indexes */
+    --nav-z-index: 100;
+
+    /* Colors */
+    --color-c1: #0a0a23;
+    --color-c2: #09f3fa;
+    --color-c3: #1be0fb;
+    --color-c4: #49aefc;
+    --color-c5: #925ffe;
+    --color-c6: #935efe;
+    --color-c7: #cd1fff;
+}

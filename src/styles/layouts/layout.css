@@ -1,0 +1,6 @@
+@import '../globals.css';
+
+body {
+    @apply flex flex-col min-h-screen;
+    @apply bg-white;
+}

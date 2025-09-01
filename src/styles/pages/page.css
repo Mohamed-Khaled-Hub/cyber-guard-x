@@ -1,0 +1,13 @@
+@import '../globals.css';
+
+div.home-page {
+    @apply flex flex-col gap-4;
+}
+
+div.home-page h1.home-title {
+    @apply text-3xl text-center font-bold leading-tight;
+}
+
+div.home-page p.home-text {
+    @apply text-xl leading-tight;
+}

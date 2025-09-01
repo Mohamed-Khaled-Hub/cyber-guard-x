@@ -1,0 +1,5 @@
+@import '../../globals.css';
+
+section.hero-section {
+    @apply w-full h-72 flex items-center justify-center not-md:px-8;
+}

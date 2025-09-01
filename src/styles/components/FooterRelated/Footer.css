@@ -1,0 +1,99 @@
+@import '../../globals.css';
+
+footer.footer {
+    @apply min-h-(--footer-min-height) pt-10 mt-10;
+    @apply bg-c1;
+}
+
+footer.footer h3 {
+    @apply font-semibold mb-3;
+}
+
+footer.footer ul {
+    @apply space-y-2;
+}
+
+footer.footer a {
+    @apply text-neutral-300 hover:text-white transition;
+}
+
+div.footer-actions-shifted {
+    @apply relative text-center text-white px-8 py-10 rounded-2xl shadow-lg;
+    @apply w-full max-w-3xl mx-auto -mb-16 relative z-0;
+}
+
+div.footer-actions-shifted > * {
+    @apply relative z-10;
+}
+
+div.footer-actions-shifted::before {
+    content: '';
+    @apply absolute inset-0 rounded-2xl bg-c1/70;
+}
+
+h2.footer-actions-title {
+    @apply text-2xl font-semibold mb-2;
+}
+
+p.footer-actions-subtitle {
+    @apply text-sm text-neutral-200 mb-4 max-w-md mx-auto;
+}
+
+h3.footer-actions-heading {
+    @apply text-lg font-bold mb-4;
+}
+
+div.footer-actions-buttons {
+    @apply flex gap-2 justify-center;
+}
+
+div.footer-grid {
+    @apply grid grid-cols-1 md:grid-cols-3 gap-8 max-w-5xl mx-auto;
+}
+
+div.footer-pages,
+div.footer-contact,
+div.footer-socials {
+    @apply text-sm text-white;
+}
+
+div.footer-pages {
+    @apply flex flex-col;
+}
+
+div.footer-pages ul {
+    @apply space-y-2;
+}
+
+div.footer-socials {
+    @apply flex flex-col items-center justify-center gap-4;
+}
+
+div.footer-socials ul {
+    @apply flex gap-4;
+}
+
+div.footer-socials li {
+    @apply w-5 h-5;
+}
+
+div.footer-socials li * {
+    @apply w-full h-full text-c5 duration-200;
+}
+
+div.footer-socials li:hover * {
+    @apply text-c6;
+}
+
+div.footer-contact li {
+    @apply flex gap-2;
+}
+
+div.footer-contact div {
+    @apply flex items-center justify-center w-5 h-5;
+}
+
+div.footer-bottom {
+    @apply mt-10 bg-black py-4 text-center text-white text-sm;
+    @apply flex items-center justify-center gap-2;
+}

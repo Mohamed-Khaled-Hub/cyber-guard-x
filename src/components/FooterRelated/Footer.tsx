@@ -1,0 +1,180 @@
+'use client'
+
+// Core
+import Link from 'next/link'
+import Image from 'next/image'
+import { LuMapPin } from 'react-icons/lu'
+import { FaLinkedin } from 'react-icons/fa6'
+import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
+// Components
+import Button from '@/src/components/UIRelated/Button'
+import Container from '@/src/components/ContainersRelated/Container'
+// Hooks
+import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
+// Style
+import '@/src/styles/components/FooterRelated/Footer.css'
+
+export default function Footer() {
+    const { name, logoUrl, contact, socials, pages } = useWebsiteInfo()
+
+    return (
+        <>
+            <div
+                className='footer-actions-shifted'
+                style={{
+                    backgroundImage: `url(/assets/images/background-pattern.png)`,
+                }}
+            >
+                <h2 className='footer-actions-title'>Ready To Get Started ?</h2>
+                <p className='footer-actions-subtitle'>
+                    Contact one of our experts to discuss your organization’s
+                    need
+                </p>
+                <h3 className='footer-actions-heading'>CONTACT US!</h3>
+                <div className='footer-actions-buttons'>
+                    <Button
+                        variant='secondary'
+                        href='/contact'
+                        label='Contact Us'
+                    />
+                    <Button
+                        variant='primary'
+                        href='/schedule-call'
+                        label='Schedule a call'
+                    />
+                </div>
+            </div>
+            <footer className='footer'>
+                <Container addMargin>
+                    <div className='footer-grid'>
+                        {/* Middle Column - Socials (comes first on mobile) */}
+                        {(socials.facebook ||
+                            socials.instagram ||
+                            socials.linkedIn) && (
+                            <div className='footer-socials order-1 md:order-2'>
+                                <Image
+                                    src={logoUrl}
+                                    alt={`${name} logo`}
+                                    width={80}
+                                    height={80}
+                                />
+                                <ul>
+                                    {socials.facebook && (
+                                        <li>
+                                            <Link
+                                                href={socials.facebook}
+                                                target='_blank'
+                                            >
+                                                <FaFacebook />
+                                            </Link>
+                                        </li>
+                                    )}
+                                    {socials.instagram && (
+                                        <li>
+                                            <Link
+                                                href={socials.instagram}
+                                                target='_blank'
+                                            >
+                                                <FaInstagram />
+                                            </Link>
+                                        </li>
+                                    )}
+                                    {socials.linkedIn && (
+                                        <li>
+                                            <Link
+                                                href={socials.linkedIn}
+                                                target='_blank'
+                                            >
+                                                <FaLinkedin />
+                                            </Link>
+                                        </li>
+                                    )}
+                                </ul>
+                            </div>
+                        )}
+
+                        {/* Left Column - Pages */}
+                        {pages && pages.some((p) => p.isService) && (
+                            <div className='footer-pages order-2 md:order-1'>
+                                <h3>Services</h3>
+                                <ul>
+                                    {pages
+                                        .filter((p) => p.isService)
+                                        .map((page, i) => (
+                                            <li key={i}>
+                                                <Link href={page.href}>
+                                                    {page.label}
+                                                </Link>
+                                            </li>
+                                        ))}
+                                </ul>
+                            </div>
+                        )}
+
+                        {/* Right Column - Contact */}
+                        {(contact.emails.length > 0 ||
+                            contact.phones.length > 0 ||
+                            contact.addresses.length > 0) && (
+                            <div className='footer-contact order-3 md:order-3'>
+                                <h3>Reach Us</h3>
+                                <ul>
+                                    {contact.emails.map((email, i) => (
+                                        <li key={i}>
+                                            <div>
+                                                <MdOutlineMail />
+                                            </div>
+                                            <Link href={`mailto:${email}`}>
+                                                {email}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                    {contact.phones.map((phone, i) => (
+                                        <li key={i}>
+                                            <div>
+                                                <MdOutlinePhone />
+                                            </div>
+                                            <Link href={`tel:${phone}`}>
+                                                {phone}
+                                            </Link>
+                                        </li>
+                                    ))}
+                                    {contact.addresses.map((addr, i) => (
+                                        <li key={i}>
+                                            <div>
+                                                <LuMapPin />
+                                            </div>
+                                            {addr}
+                                        </li>
+                                    ))}
+                                </ul>
+                            </div>
+                        )}
+                    </div>
+                </Container>
+
+                {/* Bottom Note */}
+                <div className='footer-bottom'>
+                    <p>
+                        Copyright © {new Date().getFullYear()} {name}, LLC. All
+                        rights reserved.
+                    </p>
+                    {pages &&
+                        pages.some((p) => p.isFooter) &&
+                        pages
+                            .filter((p) => p.isFooter)
+                            .map((p, i, arr) => (
+                                <span key={i}>
+                                    <Link href={p.href}>{p.label}</Link>
+                                    {i < arr.length - 1 && (
+                                        <span className='ml-2 text-white'>
+                                            |
+                                        </span>
+                                    )}
+                                </span>
+                            ))}
+                </div>
+            </footer>
+        </>
+    )
+}
