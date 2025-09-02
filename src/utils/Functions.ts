@@ -42,3 +42,17 @@ export function renderClasses(
 ): string {
     return classes.filter(Boolean).join(' ')
 }
+
+// Convert string to kebab-case
+export function toKebabCase(str: string): string {
+    return str
+        .replace(/([a-z])([A-Z])/g, '$1-$2')
+        .replace(/[_\s]+/g, '-')
+        .toLowerCase()
+}
+
+// Convert kebab-case to Normal Capitalized String
+export function fromKebabCase(str: string): string {
+    const withSpaces = str.replace(/-/g, ' ')
+    return capitalizeWords(withSpaces)
+}
