@@ -45,7 +45,7 @@ export function CompanyDataProvider({ children }: CompanyDataProviderProps) {
         }
     }
 
-    const getServiceBySlug = async (
+    const getServiceByName = async (
         name: string
     ): Promise<ServiceObject | null> => {
         try {
@@ -63,7 +63,7 @@ export function CompanyDataProvider({ children }: CompanyDataProviderProps) {
                 getTeam,
                 getReviews,
                 getServices,
-                getServiceBySlug,
+                getServiceByName,
             }}
         >
             {children}

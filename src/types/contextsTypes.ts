@@ -44,5 +44,5 @@ export type CompanyDataContextType = {
     getTeam: () => Promise<TeamMemberObject[]>
     getReviews: () => Promise<ReviewObject[]>
     getServices: () => Promise<ServiceObject[]>
-    getServiceBySlug: (name: string) => Promise<ServiceObject | null>
+    getServiceByName: (name: string) => Promise<ServiceObject | null>
 }

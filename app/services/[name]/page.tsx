@@ -12,11 +12,11 @@ export default function Page({ params }: ServicesPageParamsType) {
     // Get NAME /services/:name
     const { name: serviceName } = use(params)
     // Contexts
-    const { getServiceBySlug } = useCompanyData()
+    const { getServiceByName } = useCompanyData()
 
     useEffect(() => {
         const fetchData = async () => {
-            const service = await getServiceBySlug(serviceName)
+            const service = await getServiceByName(serviceName)
             console.log(service)
         }
         fetchData().then()
