@@ -6,6 +6,11 @@ import {
     ButtonHTMLAttributes,
     AnchorHTMLAttributes,
 } from 'react'
+import {
+    ReviewObject,
+    ServiceObject,
+    TeamMemberObject,
+} from '@/src/types/objectsTypes'
 
 // Layouts
 export type RootLayoutProps = PropsWithChildren
@@ -57,36 +62,14 @@ export type LinkOnlyProps = CommonButtonProps &
 
 export type ButtonProps = ButtonOnlyProps | LinkOnlyProps
 
-// -------Cards--------
+// Cards
+export type OurTeamCardProps = TeamMemberObject
 
-// our team card
-export type OurTeamCardProps = {
-    imgSrc: string
-    name: string
-    role: string
-}
+export type ReviewCardProps = ReviewObject
 
-// review card
-export type ReviewCardProps = {
-    imgSrc: string;
-    name: string;
-    review: string
-}
+export type ServiceCardProps = ServiceObject
 
-// service card
-export type ServiceCardProps = {
-    imgSrc: string;
-    name: string;
-    description: string;
-};
-
-// Mini Service card
-
-export type MiniServiceCardProps = {
-    imgSrc: string;
-    title: string;      // e.g. "Trust and Integrity"
-    description: string;
-  };
+export type MiniServiceCardProps = ServiceObject
 
 // Providers
 export type AllProvidersProps = PropsWithChildren
