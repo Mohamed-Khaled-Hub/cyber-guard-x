@@ -9,7 +9,7 @@ export const services: ServiceObject[] = [
         imgSrc: '/assets/images/services/web-penetration-testing.svg',
         name: 'Web Penetration Testing',
         description:
-            "comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap",
+            'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/web-penetration-testing2.svg',
@@ -228,35 +228,8 @@ export const services: ServiceObject[] = [
         ],
     },
     {
-        imgSrc: '/assets/images/services/customized.svg',
-        name: 'Customized Software Development',
-        description:
-            'We build software fully tailored to your business processes, giving you complete control over features, design, and integrations. Our solutions are flexible, scalable, and designed to grow with you. With customized development, you get exactly what you need — no unnecessary extras.',
-        extraInfo: [
-            {
-                imgSrc: '/assets/images/services/customized2.svg',
-                description:
-                    'Tailored to fit your exact business goals Gives you full control over features, design, and integrations gives you the exact features you need without any    unnecessary extras',
-            },
-        ],
-        whatWeCanOffer: [
-            {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
-                description:
-                    'Fully tailored systems to meet specific business workflows.',
-            },
-            {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
-                description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
-            },
-        ],
-    },
-    {
         imgSrc: '/assets/images/services/maintenance.svg',
-        name: 'Maintenance & Support',
+        name: 'Maintenance and Support',
         description:
             'Our maintenance and support services ensure your systems remain secure, reliable, and optimized for peak performance. With continuous monitoring, proactive updates, and rapid assistance, we give you the confidence to focus on growth while we handle the technical side.',
         extraInfo: [
@@ -283,7 +256,7 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/ai.svg',
-        name: 'AI & Automation Services',
+        name: 'AI and Automation Services',
         description:
             'Our AI and automation services help businesses save time, reduce costs, and boost efficiency. From chatbots and OCR to predictive analytics, we provide smart tools that optimize workflows and deliver valuable insights. With intelligent automation.',
         extraInfo: [
@@ -310,7 +283,7 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/cloud.svg',
-        name: 'Cloud Solutions & Integration',
+        name: 'Cloud Solutions and Integration',
         description:
             'Seamless migration, hosting, and integration on leading cloud platforms like AWS, Azure, and GCP. Our solutions ensure your systems stay connected, scalable, and secure. With expert cloud management.',
         extraInfo: [

@@ -21,7 +21,7 @@ export function CompanyDataProvider({ children }: CompanyDataProviderProps) {
             return res.data
         } catch (error) {
             console.error('Error fetching team:', error)
-            return [] // fallback
+            return []
         }
     }
 

@@ -34,9 +34,8 @@ export type WebsiteInfoContextType = {
     pages: {
         label: string
         href: string
-        isService?: boolean
         isFooter?: boolean
-        isNotInNav?: boolean
+        isSpecialNav?: boolean
     }[]
 }
 

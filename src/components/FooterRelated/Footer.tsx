@@ -6,17 +6,37 @@ import Image from 'next/image'
 import { LuMapPin } from 'react-icons/lu'
 import { FaLinkedin } from 'react-icons/fa6'
 import { FaFacebook, FaInstagram } from 'react-icons/fa'
+import { useCallback, useEffect, useState } from 'react'
 import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 // Components
 import Button from '@/src/components/UIRelated/Button'
 import Container from '@/src/components/ContainersRelated/Container'
+// Functions
+import { toKebabCase } from '@/src/utils/Functions'
 // Hooks
 import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
+import { useCompanyData } from '@/src/providers/CompanyDataProvider'
+// Types
+import { ServiceObject } from '@/src/types/objectsTypes'
 // Style
 import '@/src/styles/components/FooterRelated/Footer.css'
 
+/* eslint-disable react-hooks/exhaustive-deps */
 export default function Footer() {
+    // Contexts
+    const { getServices } = useCompanyData()
     const { name, logoUrl, contact, socials, pages } = useWebsiteInfo()
+    // States
+    const [services, setServices] = useState<ServiceObject[]>([])
+
+    const fetchData = useCallback(async () => {
+        const res = await getServices()
+        setServices(res)
+    }, [getServices])
+
+    useEffect(() => {
+        fetchData().then()
+    }, [])
 
     return (
         <>
@@ -95,20 +115,44 @@ export default function Footer() {
                         )}
 
                         {/* Left Column - Pages */}
-                        {pages && pages.some((p) => p.isService) && (
+                        {services && services.length > 0 && (
                             <div className='footer-pages order-2 md:order-1'>
                                 <h3>Services</h3>
                                 <ul>
-                                    {pages
-                                        .filter((p) => p.isService)
-                                        .map((page, i) => (
-                                            <li key={i}>
-                                                <Link href={page.href}>
-                                                    {page.label}
+                                    {services
+                                        .sort(
+                                            (a, b) =>
+                                                b.name.length - a.name.length
+                                        ) // longest first
+                                        .slice(0, 5) // only 5
+                                        .sort(
+                                            (a, b) =>
+                                                a.name.length - b.name.length
+                                        ) // reorder shortest-first among top 5
+                                        .map((service, idx) => (
+                                            <li key={`service-${idx}`}>
+                                                <Link
+                                                    href={`/services/${toKebabCase(service.name)}`}
+                                                >
+                                                    {service.name}
                                                 </Link>
                                             </li>
                                         ))}
                                 </ul>
+                                <div className='mt-2'>
+                                    <Link
+                                        href={
+                                            pages.find(
+                                                (p) =>
+                                                    p.label.toLowerCase() ===
+                                                    'services'
+                                            )!.href
+                                        }
+                                        className='text-sm underline underline-offset-2'
+                                    >
+                                        Explore our services
+                                    </Link>
+                                </div>
                             </div>
                         )}
 

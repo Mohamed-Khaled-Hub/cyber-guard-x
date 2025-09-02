@@ -45,10 +45,21 @@ export function renderClasses(
 
 // Convert string to kebab-case
 export function toKebabCase(str: string): string {
-    return str
-        .replace(/([a-z])([A-Z])/g, '$1-$2')
-        .replace(/[_\s]+/g, '-')
-        .toLowerCase()
+    return (
+        str
+            // Split ALL-CAPS acronym followed by Capital+lowercase (e.g., "XMLHttp" -> "XML-Http")
+            .replace(/([A-Z]{2,})([A-Z][a-z])/g, '$1-$2')
+            // Split lower/digit followed by Capital ONLY when that Capital is followed by lowercase (e.g., "fooBar" -> "foo-Bar"; avoids "SaaS" -> "Saa-S")
+            .replace(/([a-z0-9])([A-Z])(?=[a-z])/g, '$1-$2')
+            // Split lower/digit before a run of 2+ Capitals at end or before non-lowercase (e.g., "forID" -> "for-ID", "getURL" -> "get-URL")
+            .replace(/([a-z0-9])([A-Z]{2,})(?=$|[^a-z])/g, '$1-$2')
+            // Replace non-alphanumerics with hyphens
+            .replace(/[^a-zA-Z0-9]+/g, '-')
+            // Trim duplicate/edge hyphens
+            .replace(/^-+|-+$/g, '')
+            // Lowercase
+            .toLowerCase()
+    )
 }
 
 // Convert kebab-case to Normal Capitalized String

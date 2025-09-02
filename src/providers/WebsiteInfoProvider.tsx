@@ -22,8 +22,8 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                     emails: ['info@cyberguardx.org'],
                     phones: ['+20 01559917671', '+20 01559894768'],
                     addresses: [
-                        '42 Elbahr Street, Sheraton, New Cairo',
-                        '724 Elhorya road, Loran, Alexandria',
+                        '42 El Bahr Street, Sheraton, New Cairo',
+                        '724 El Horreya Road, Loran, Alexandria',
                     ],
                 },
                 socials: {
@@ -32,86 +32,35 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                     linkedIn: 'https://www.linkedin.com/',
                 },
                 pages: [
+                    // Main pages
                     { label: 'Home', href: '/' },
                     { label: 'About', href: '/about' },
+
+                    // On the right side of nav with special buttons
                     {
-                        label: 'Software Systems',
-                        href: '/software-systems',
+                        label: 'Services',
+                        href: '/services',
+                        isSpecialNav: true,
                     },
-                    { label: 'Services', href: '/services', isNotInNav: true },
-                    { label: 'Contact Us', href: '/contact', isNotInNav: true },
+                    {
+                        label: 'Contact Us',
+                        href: '/contact-us',
+                        isSpecialNav: true,
+                    },
+
+                    // Footer links
                     {
                         label: 'Privacy Policy',
-                        href: '/privacy',
+                        href: '/privacy-policy',
                         isFooter: true,
                     },
                     {
                         label: 'Terms and Conditions',
-                        href: '/terms',
+                        href: '/terms-and-conditions',
                         isFooter: true,
                     },
-                    {
-                        label: 'Web Penetration Testing',
-                        href: '/services/web-penetration-testing',
-                        isService: true,
-                    },
-                    {
-                        label: 'Network Penetration Testing',
-                        href: '/services/network-penetration-testing',
-                        isService: true,
-                    },
-                    {
-                        label: 'Auditing',
-                        href: '/services/auditing',
-                        isService: true,
-                    },
-                    {
-                        label: 'GRC',
-                        href: '/services/grc',
-                        isService: true,
-                    },
-                    {
-                        label: 'SOC As a Service',
-                        href: '/services/soc',
-                        isService: true,
-                    },
-                    {
-                        label: 'Mobile Penetration Testing',
-                        href: '/services/mobile-penetraion-testing',
-                        isService: true,
-                    },
-                    {
-                        label: 'SaaS Solutions',
-                        href: '/services/saas',
-                        isService: true,
-                    },
-                    {
-                        label: 'Customized Software Development',
-                        href: '/services/customized-software-development',
-                        isService: true,
-                    },
-                    {
-                        label: 'Maintenance & Support',
-                        href: '/services/maintenance-and-support',
-                        isService: true,
-                    },
-                    {
-                        label: 'AI & Automation Services',
-                        href: '/services/ai-and-automation',
-                        isService: true,
-                    },
-                    {
-                        label: 'Cloud Solutions & Integration',
-                        href: '/services/clouad-and-integrations',
-                        isService: true,
-                    },
-                    {
-                        label: 'Web Application Development',
-                        href: '/services/web-app-dev',
-                        isService: true,
-                    },
-                    
 
+                    // Services (Rendered dynamically in footer by getting it from API)
                 ],
             }}
         >

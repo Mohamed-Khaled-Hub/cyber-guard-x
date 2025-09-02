@@ -35,8 +35,7 @@ export default function Nav() {
                         {pages
                             .filter(
                                 (p) =>
-                                    p.isNotInNav === undefined &&
-                                    p.isService === undefined &&
+                                    p.isSpecialNav === undefined &&
                                     p.isFooter === undefined
                             )
                             .map((p) => (
@@ -47,7 +46,7 @@ export default function Nav() {
                                 </li>
                             ))}
                         {pages
-                            .filter((p) => p.isNotInNav)
+                            .filter((p) => p.isSpecialNav)
                             .map((p) => (
                                 <li key={p.href} className='nav-item'>
                                     <Button

@@ -82,3 +82,8 @@ export type CompanyDataProviderProps = PropsWithChildren
 export type ServicesPageParamsType = {
     params: Promise<{ name: string }>
 }
+
+// Routes
+export type GetServiceRouteParamsType = {
+    params: Promise<{ name: string }>
+}

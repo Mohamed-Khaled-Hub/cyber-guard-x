@@ -4,19 +4,22 @@ import { NextResponse } from 'next/server'
 import { fromKebabCase } from '@/src/utils/Functions'
 // Types
 import { ServiceObject } from '@/src/types/objectsTypes'
+import { GetServiceRouteParamsType } from '@/src/types/propsTypes'
 // Reuse services data
 import { services } from '../route'
 
 export async function GET(
     req: Request,
-    { params }: { params: { name: string } }
+    context: GetServiceRouteParamsType
 ): Promise<NextResponse<ServiceObject | { error: string }>> {
-    const { name } = params
+    const { name } = await context.params
 
     // Convert kebab-case to normal title (e.g., web-penetration-testing → Web Penetration Testing)
     const serviceName = fromKebabCase(name)
 
-    const service = services.find((s) => s.name === serviceName)
+    const service = services.find(
+        (s) => s.name.toLowerCase() === serviceName.toLowerCase()
+    )
 
     if (!service) {
         return NextResponse.json(
