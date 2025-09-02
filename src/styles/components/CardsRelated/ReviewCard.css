@@ -1,0 +1,23 @@
+@import '../../globals.css';
+
+
+.review-card {
+    @apply relative bg-neutral-100 rounded-lg shadow-md w-80 p-6 pt-16 flex flex-col items-center text-center;
+  }
+  
+  .review-card-img-wrapper {
+    @apply absolute w-32 aspect-square -top-16 overflow-hidden flex items-center justify-center;
+  }
+  
+  .review-card-img {
+    @apply rounded-full w-28 h-28 object-cover;
+  }
+  
+  .review-card-name {
+    @apply font-bold mt-2;
+  }
+  
+  .review-card-text {
+    @apply text-neutral-600 mt-2 text-sm;
+  }
+  

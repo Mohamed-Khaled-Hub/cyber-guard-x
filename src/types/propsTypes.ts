@@ -57,6 +57,37 @@ export type LinkOnlyProps = CommonButtonProps &
 
 export type ButtonProps = ButtonOnlyProps | LinkOnlyProps
 
+// -------Cards--------
+
+// our team card
+export type OurTeamCardProps = {
+    imgSrc: string
+    name: string
+    role: string
+}
+
+// review card
+export type ReviewCardProps = {
+    imgSrc: string;
+    name: string;
+    review: string
+}
+
+// service card
+export type ServiceCardProps = {
+    imgSrc: string;
+    name: string;
+    description: string;
+};
+
+// Mini Service card
+
+export type MiniServiceCardProps = {
+    imgSrc: string;
+    title: string;      // e.g. "Trust and Integrity"
+    description: string;
+  };
+
 // Providers
 export type AllProvidersProps = PropsWithChildren
 

@@ -1,0 +1,23 @@
+@import '../../globals.css';
+@layer components {
+    .service-card {
+      @apply bg-white rounded-lg shadow-md p-6 flex flex-col items-start gap-2 w-72;
+    }
+  
+    .service-card-logo {
+      @apply mb-2;
+    }
+  
+    .service-card-name {
+      @apply font-bold text-lg;
+    }
+  
+    .service-card-description {
+      @apply text-neutral-600 text-sm;
+    }
+  
+    .service-card-link {
+      @apply text-blue-600 font-medium mt-2 hover:underline;
+    }
+  }
+  
