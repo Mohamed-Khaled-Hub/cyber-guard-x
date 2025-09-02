@@ -5,6 +5,7 @@ import { useContext } from 'react'
 import { CompanyDataContext } from '@/src/contexts/Contexts'
 // Types
 import { CompanyDataProviderProps } from '@/src/types/propsTypes'
+import { ServiceObject } from '@/src/types/objectsTypes'
 
 // Server
 const server = 'http://localhost:3000'
@@ -20,7 +21,7 @@ export function CompanyDataProvider({ children }: CompanyDataProviderProps) {
             return res.data
         } catch (error) {
             console.error('Error fetching team:', error)
-            return [] // return empty array as fallback
+            return [] // fallback
         }
     }
 
@@ -44,12 +45,25 @@ export function CompanyDataProvider({ children }: CompanyDataProviderProps) {
         }
     }
 
+    const getServiceBySlug = async (
+        name: string
+    ): Promise<ServiceObject | null> => {
+        try {
+            const res = await axios.get(`${server}/api/services/${name}`)
+            return res.data
+        } catch (error) {
+            console.error(`Error fetching service ${name}:`, error)
+            return null
+        }
+    }
+
     return (
         <CompanyDataContext.Provider
             value={{
                 getTeam,
                 getReviews,
                 getServices,
+                getServiceBySlug,
             }}
         >
             {children}

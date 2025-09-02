@@ -14,4 +14,13 @@ export type ServiceObject = {
     imgSrc: string
     name: string
     description: string
+    extraInfo?: {
+        imgSrc: string
+        description: string
+    }[]
+    whatWeCanOffer?: {
+        imgSrc: string
+        name: string
+        description: string
+    }[]
 }

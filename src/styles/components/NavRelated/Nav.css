@@ -10,7 +10,7 @@ div.nav-inner {
 }
 
 ul.nav-list {
-    @apply flex items-center gap-4;
+    @apply flex flex-wrap items-center gap-4;
 }
 
 li.nav-item {

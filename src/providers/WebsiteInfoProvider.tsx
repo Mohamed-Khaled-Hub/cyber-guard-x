@@ -34,6 +34,10 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                 pages: [
                     { label: 'Home', href: '/' },
                     { label: 'About', href: '/about' },
+                    {
+                        label: 'Software Systems',
+                        href: '/software-systems',
+                    },
                     { label: 'Services', href: '/services', isNotInNav: true },
                     { label: 'Contact Us', href: '/contact', isNotInNav: true },
                     {
@@ -48,7 +52,7 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                     },
                     {
                         label: 'Penetration Testing',
-                        href: '/services/pen-test',
+                        href: '/services/penetration-testing',
                         isService: true,
                     },
                 ],
