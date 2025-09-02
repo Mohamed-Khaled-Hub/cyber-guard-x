@@ -62,6 +62,8 @@ export type AllProvidersProps = PropsWithChildren
 
 export type WebsiteInfoProviderProps = PropsWithChildren
 
+export type CompanyDataProviderProps = PropsWithChildren
+
 // Dynamic Page
 export type ServicesPageParamsType = {
     params: Promise<{ name: string }>

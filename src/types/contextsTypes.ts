@@ -1,3 +1,10 @@
+// Types
+import {
+    ReviewObject,
+    ServiceObject,
+    TeamMemberObject,
+} from '@/src/types/objectsTypes'
+
 // Website's Info (name, desc, phones, ...etc)
 export type WebsiteInfoContextType = {
     // Core info
@@ -31,4 +38,10 @@ export type WebsiteInfoContextType = {
         isFooter?: boolean
         isNotInNav?: boolean
     }[]
+}
+
+export type CompanyDataContextType = {
+    getTeam: () => Promise<TeamMemberObject[]>
+    getReviews: () => Promise<ReviewObject[]>
+    getServices: () => Promise<ServiceObject[]>
 }

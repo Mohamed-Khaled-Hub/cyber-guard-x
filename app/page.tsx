@@ -8,7 +8,6 @@ import { setTitleAndDesc } from '@/src/utils/Functions'
 import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 // Style
 import '@/src/styles/pages/page.css'
-import ContactForm from '@/src/components/UIRelated/ContactForm'
 
 /* eslint-disable react-hooks/exhaustive-deps */
 export default function HomePage() {
@@ -22,7 +21,6 @@ export default function HomePage() {
         <>
             <div className='home-page'>
                 <p>Home</p>
-                <ContactForm />
             </div>
         </>
     )
