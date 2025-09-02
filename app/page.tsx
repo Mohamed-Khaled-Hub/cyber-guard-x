@@ -1,13 +1,14 @@
 'use client'
 
 // Core
-import { useEffect, useState } from 'react'
+import { useEffect } from 'react'
 // Functions
 import { setTitleAndDesc } from '@/src/utils/Functions'
 // Hooks
 import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 // Style
 import '@/src/styles/pages/page.css'
+import ContactForm from '@/src/components/UIRelated/ContactForm'
 
 /* eslint-disable react-hooks/exhaustive-deps */
 export default function HomePage() {
@@ -19,7 +20,10 @@ export default function HomePage() {
 
     return (
         <>
-            <div className='home-page'>Home</div>
+            <div className='home-page'>
+                <p>Home</p>
+                <ContactForm />
+            </div>
         </>
     )
 }

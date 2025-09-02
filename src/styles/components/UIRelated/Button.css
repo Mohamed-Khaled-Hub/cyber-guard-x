@@ -2,7 +2,7 @@
 
 a.btn,
 button.btn {
-    @apply w-fit min-w-24 px-4 py-2 rounded-lg font-medium text-sm transition-colors duration-200 cursor-pointer
+    @apply min-w-24 px-4 py-2 rounded-lg font-medium text-sm transition-colors duration-200 cursor-pointer
     focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-center;
 }
 

@@ -1,8 +1,8 @@
 // Core
 import {
-    ChangeEvent,
     PropsWithChildren,
     InputHTMLAttributes,
+    TextareaHTMLAttributes,
     ButtonHTMLAttributes,
     AnchorHTMLAttributes,
 } from 'react'
@@ -24,8 +24,13 @@ export type MainProps = PropsWithChildren & {
 export type InputProps = {
     label?: string
     error?: string
-    onChangeAction: (e: ChangeEvent<HTMLInputElement>) => void
-} & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
+    as?: 'input' | 'textarea'
+    onChangeAction: (value: string) => void
+} & Omit<
+    InputHTMLAttributes<HTMLInputElement> &
+        TextareaHTMLAttributes<HTMLTextAreaElement>,
+    'onChange'
+>
 
 export type CounterProps = {
     endNumber: number

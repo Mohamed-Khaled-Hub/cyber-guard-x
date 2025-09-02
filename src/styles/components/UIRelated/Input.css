@@ -12,16 +12,19 @@ label.input-label-error {
     @apply text-red-500;
 }
 
-input.input-box {
-    @apply px-3 py-2 rounded-md border shadow-sm focus:outline-none focus:ring transition disabled:cursor-not-allowed;
-    @apply bg-white border-neutral-400 focus:ring-c5/35 disabled:bg-gray-100;
+input.input-box,
+textarea.input-box {
+    @apply p-3 rounded-lg border shadow-sm focus:outline-none focus:ring transition disabled:cursor-not-allowed;
+    @apply bg-white border-neutral-300 focus:ring-c5/35 disabled:bg-gray-100;
 }
 
-input.input-box::placeholder {
+input.input-box::placeholder,
+textarea.input-box::placeholder {
     @apply text-neutral-400;
 }
 
-input.input-error {
+input.input-error,
+textarea.input-error {
     @apply border-red-500 focus:border-black focus:ring-red-500;
 }
 

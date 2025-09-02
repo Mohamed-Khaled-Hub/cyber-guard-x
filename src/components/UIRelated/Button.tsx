@@ -14,9 +14,10 @@ export default function Button({
     variant = 'primary',
     label,
     href,
+    className: extraClass,
     ...props
 }: ButtonProps) {
-    const className = renderClasses('btn', `btn-${variant}`)
+    const className = renderClasses('btn', `btn-${variant}`, extraClass)
 
     if (href) {
         return (

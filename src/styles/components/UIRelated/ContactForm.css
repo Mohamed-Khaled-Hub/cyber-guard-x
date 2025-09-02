@@ -1,0 +1,13 @@
+@import '../../globals.css';
+
+form.contact-form {
+    @apply bg-white p-6 rounded-2xl shadow-lg w-full max-w-md mx-auto space-y-4;
+}
+
+div.contact-form-row {
+    @apply grid grid-cols-2 gap-4;
+}
+
+textarea.contact-textarea {
+    @apply min-h-[120px] resize-none;
+}

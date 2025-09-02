@@ -1,6 +1,5 @@
 'use client'
 
-// Core
 import { ChangeEvent } from 'react'
 // Functions
 import { renderClasses, sanitizeInput } from '@/src/utils/Functions'
@@ -12,10 +11,13 @@ import '@/src/styles/components/UIRelated/Input.css'
 export default function Input({
     label,
     error,
+    as = 'input',
     onChangeAction,
     ...props
 }: InputProps) {
-    const handleChange = (e: ChangeEvent<HTMLInputElement>) => {
+    const handleChange = (
+        e: ChangeEvent<HTMLInputElement> | ChangeEvent<HTMLTextAreaElement>
+    ) => {
         const safeValue = sanitizeInput(e.target.value)
         onChangeAction(safeValue)
     }
@@ -38,16 +40,31 @@ export default function Input({
                     {label}
                 </label>
             )}
-            <input
-                {...props}
-                placeholder={placeholder}
-                onChange={handleChange}
-                className={renderClasses(
-                    'input-box',
-                    error && 'input-error',
-                    props.className
-                )}
-            />
+
+            {as === 'textarea' ? (
+                <textarea
+                    {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
+                    placeholder={placeholder}
+                    onChange={handleChange}
+                    className={renderClasses(
+                        'input-box',
+                        error && 'input-error',
+                        props.className
+                    )}
+                />
+            ) : (
+                <input
+                    {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
+                    placeholder={placeholder}
+                    onChange={handleChange}
+                    className={renderClasses(
+                        'input-box',
+                        error && 'input-error',
+                        props.className
+                    )}
+                />
+            )}
+
             {error && <p className='input-error-message'>{error}</p>}
         </div>
     )
