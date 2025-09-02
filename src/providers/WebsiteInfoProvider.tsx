@@ -51,10 +51,67 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                         isFooter: true,
                     },
                     {
-                        label: 'Penetration Testing',
-                        href: '/services/penetration-testing',
+                        label: 'Web Penetration Testing',
+                        href: '/services/web-penetration-testing',
                         isService: true,
                     },
+                    {
+                        label: 'Network Penetration Testing',
+                        href: '/services/network-penetration-testing',
+                        isService: true,
+                    },
+                    {
+                        label: 'Auditing',
+                        href: '/services/auditing',
+                        isService: true,
+                    },
+                    {
+                        label: 'GRC',
+                        href: '/services/grc',
+                        isService: true,
+                    },
+                    {
+                        label: 'SOC As a Service',
+                        href: '/services/soc',
+                        isService: true,
+                    },
+                    {
+                        label: 'Mobile Penetration Testing',
+                        href: '/services/mobile-penetraion-testing',
+                        isService: true,
+                    },
+                    {
+                        label: 'SaaS Solutions',
+                        href: '/services/saas',
+                        isService: true,
+                    },
+                    {
+                        label: 'Customized Software Development',
+                        href: '/services/customized-software-development',
+                        isService: true,
+                    },
+                    {
+                        label: 'Maintenance & Support',
+                        href: '/services/maintenance-and-support',
+                        isService: true,
+                    },
+                    {
+                        label: 'AI & Automation Services',
+                        href: '/services/ai-and-automation',
+                        isService: true,
+                    },
+                    {
+                        label: 'Cloud Solutions & Integration',
+                        href: '/services/clouad-and-integrations',
+                        isService: true,
+                    },
+                    {
+                        label: 'Web Application Development',
+                        href: '/services/web-app-dev',
+                        isService: true,
+                    },
+                    
+
                 ],
             }}
         >
