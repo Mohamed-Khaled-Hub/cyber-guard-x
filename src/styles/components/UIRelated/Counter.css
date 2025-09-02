@@ -1,0 +1,13 @@
+@import '../../globals.css';
+
+div.counter-container {
+    @apply bg-c1 rounded-lg w-44 py-3 text-white flex flex-col gap-1 items-center justify-center;
+}
+
+div.counter-number {
+    @apply text-xl flex items-center gap-1;
+}
+
+div.counter-label {
+    @apply text-xs;
+}

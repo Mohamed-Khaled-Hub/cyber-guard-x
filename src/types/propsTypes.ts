@@ -1,5 +1,6 @@
 // Core
 import {
+    ChangeEvent,
     PropsWithChildren,
     InputHTMLAttributes,
     ButtonHTMLAttributes,
@@ -23,12 +24,17 @@ export type MainProps = PropsWithChildren & {
 export type InputProps = {
     label?: string
     error?: string
-    onChangeAction: (value: string) => void
+    onChangeAction: (e: ChangeEvent<HTMLInputElement>) => void
 } & Omit<InputHTMLAttributes<HTMLInputElement>, 'onChange'>
+
+export type CounterProps = {
+    endNumber: number
+    numberFor: string
+}
 
 // Button Types (Handling render it as <a> or <button>)
 export type CommonButtonProps = {
-    variant?: 'primary' | 'secondary' | 'gradient'
+    variant?: 'primary' | 'secondary' | 'gradient' | 'service'
     label: string
 }
 

@@ -1,7 +1,7 @@
 'use client'
 
 // Core
-import { useEffect } from 'react'
+import { useEffect, useState } from 'react'
 // Functions
 import { setTitleAndDesc } from '@/src/utils/Functions'
 // Hooks

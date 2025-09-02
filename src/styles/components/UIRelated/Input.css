@@ -14,7 +14,11 @@ label.input-label-error {
 
 input.input-box {
     @apply px-3 py-2 rounded-md border shadow-sm focus:outline-none focus:ring transition disabled:cursor-not-allowed;
-    @apply bg-white border-black focus:ring-neutral-400 disabled:bg-gray-100;
+    @apply bg-white border-neutral-400 focus:ring-c5/35 disabled:bg-gray-100;
+}
+
+input.input-box::placeholder {
+    @apply text-neutral-400;
 }
 
 input.input-error {

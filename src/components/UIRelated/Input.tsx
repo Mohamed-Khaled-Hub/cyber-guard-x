@@ -20,6 +20,11 @@ export default function Input({
         onChangeAction(safeValue)
     }
 
+    const placeholder =
+        props.placeholder && props.required
+            ? `${props.placeholder} *`
+            : props.placeholder
+
     return (
         <div className='input-field'>
             {label && (
@@ -35,6 +40,7 @@ export default function Input({
             )}
             <input
                 {...props}
+                placeholder={placeholder}
                 onChange={handleChange}
                 className={renderClasses(
                     'input-box',
