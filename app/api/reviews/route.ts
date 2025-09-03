@@ -8,17 +8,17 @@ export async function GET(): Promise<NextResponse<ReviewObject[]>> {
         {
             imgSrc: '/assets/images/reviews/review1.png',
             name: 'John Doe',
-            review: 'Excellent service! They helped secure our systems effectively.',
+            review: 'Honestly, I didn’t expect the system to make such a difference. It helped us organize sales and inventory, and we can generate quick reports that show the company’s status. This allowed me to focus on growth instead of wasting time on manual calculations.',
         },
         {
             imgSrc: '/assets/images/reviews/review2.png',
             name: 'Jane Smith',
-            review: 'Professional and thorough in their penetration testing.',
+            review: 'We now have a system that allows us to track every booking in just a few simple steps. Even the new employees learned to use it quickly.".',
         },
         {
             imgSrc: '/assets/images/reviews/review3.png',
             name: 'Michael Brown',
-            review: 'We feel much safer after their security audit.',
+            review: 'All appointments and medical records are saved, and I can easily go back to any patient’s notes. The experience is very convenient.',
         },
     ]
 
