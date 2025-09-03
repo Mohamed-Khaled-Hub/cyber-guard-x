@@ -60,7 +60,7 @@ export default function Footer() {
                     />
                     <Button
                         variant='primary'
-                        href='/schedule-call'
+                        href='/contact'
                         label='Schedule a call'
                     />
                 </div>

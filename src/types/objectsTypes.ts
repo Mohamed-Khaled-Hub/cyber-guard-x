@@ -26,3 +26,16 @@ export type ServiceObject = {
         description: string
     }[]
 }
+
+export type ContactFormData = {
+    firstName: string
+    lastName: string
+    email: string
+    phone: string
+    message: string
+}
+
+export type SMTPGoogleResponse = {
+    success: boolean
+    message: string
+}

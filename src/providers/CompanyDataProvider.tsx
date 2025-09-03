@@ -8,7 +8,7 @@ import { CompanyDataProviderProps } from '@/src/types/propsTypes'
 import { ServiceObject } from '@/src/types/objectsTypes'
 
 // Server
-const server = 'http://localhost:3000'
+const server = process.env.NEXT_PUBLIC_SERVER_ENDPOINT
 
 // Hook
 export const useCompanyData = () => useContext(CompanyDataContext)

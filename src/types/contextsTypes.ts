@@ -3,6 +3,7 @@ import {
     ReviewObject,
     ServiceObject,
     TeamMemberObject,
+    SMTPGoogleResponse,
 } from '@/src/types/objectsTypes'
 
 // Website's Info (name, desc, phones, ...etc)
@@ -44,4 +45,14 @@ export type CompanyDataContextType = {
     getReviews: () => Promise<ReviewObject[]>
     getServices: () => Promise<ServiceObject[]>
     getServiceByName: (name: string) => Promise<ServiceObject | null>
+}
+
+export type ContactContextType = {
+    sendContactMessage: (formData: {
+        firstName: string
+        lastName: string
+        email: string
+        phone?: string
+        message: string
+    }) => Promise<SMTPGoogleResponse>
 }

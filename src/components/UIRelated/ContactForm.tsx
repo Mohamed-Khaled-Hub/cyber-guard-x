@@ -5,15 +5,16 @@ import { useState, FormEvent } from 'react'
 // Components
 import Input from '@/src/components/UIRelated/Input'
 import Button from '@/src/components/UIRelated/Button'
+// Hooks
+import { useContact } from '@/src/providers/ContactProvider'
+// Types
+import { SMTPGoogleResponse } from '@/src/types/objectsTypes'
 // Style
 import '@/src/styles/components/UIRelated/ContactForm.css'
 
-interface ApiResponse {
-    success: boolean
-    message: string
-}
-
 export default function ContactForm() {
+    const { sendContactMessage } = useContact()
+
     const [formData, setFormData] = useState({
         firstName: '',
         lastName: '',
@@ -41,45 +42,32 @@ export default function ContactForm() {
         setIsSubmitting(true)
         setSubmitStatus({ type: null, message: '' })
 
-        try {
-            const response = await fetch('/api/contact', {
-                method: 'POST',
-                headers: {
-                    'Content-Type': 'application/json',
-                },
-                body: JSON.stringify(formData),
+        const response: SMTPGoogleResponse = await sendContactMessage(formData)
+
+        if (response.success) {
+            setSubmitStatus({
+                type: 'success',
+                message:
+                    "Thank you! Your message has been sent successfully. We'll get back to you soon.",
             })
-
-            const data: ApiResponse = await response.json()
-
-            if (data.success) {
-                setSubmitStatus({
-                    type: 'success',
-                    message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.',
-                })
-                // Reset form
-                setFormData({
-                    firstName: '',
-                    lastName: '',
-                    email: '',
-                    phone: '',
-                    message: '',
-                })
-            } else {
-                setSubmitStatus({
-                    type: 'error',
-                    message: data.message || 'Something went wrong. Please try again.',
-                })
-            }
-        } catch (error) {
-            console.error('Error submitting form:', error)
+            // Reset form
+            setFormData({
+                firstName: '',
+                lastName: '',
+                email: '',
+                phone: '',
+                message: '',
+            })
+        } else {
             setSubmitStatus({
                 type: 'error',
-                message: 'Network error. Please check your connection and try again.',
+                message:
+                    response.message ||
+                    'Something went wrong. Please try again.',
             })
-        } finally {
-            setIsSubmitting(false)
         }
+
+        setIsSubmitting(false)
     }
 
     return (
@@ -127,7 +115,9 @@ export default function ContactForm() {
             {submitStatus.type && (
                 <div
                     className={`status-message ${
-                        submitStatus.type === 'success' ? 'status-success' : 'status-error'
+                        submitStatus.type === 'success'
+                            ? 'status-success'
+                            : 'status-error'
                     }`}
                 >
                     {submitStatus.message}

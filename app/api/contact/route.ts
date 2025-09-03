@@ -1,14 +1,8 @@
-import { NextRequest, NextResponse } from 'next/server'
+// Core
 import nodemailer from 'nodemailer'
-
-// Define the request body type
-interface ContactFormData {
-    firstName: string
-    lastName: string
-    email: string
-    phone: string
-    message: string
-}
+import { NextRequest, NextResponse } from 'next/server'
+// Types
+import { ContactFormData } from '@/src/types/objectsTypes'
 
 export async function POST(request: NextRequest) {
     try {
@@ -100,11 +94,13 @@ Timestamp: ${new Date().toLocaleString()}
             { success: true, message: 'Email sent successfully!' },
             { status: 200 }
         )
-
     } catch (error) {
         console.error('Error sending email:', error)
         return NextResponse.json(
-            { success: false, message: 'Failed to send email. Please try again later.' },
+            {
+                success: false,
+                message: 'Failed to send email. Please try again later.',
+            },
             { status: 500 }
         )
     }
