@@ -1,14 +1,13 @@
 'use client'
 
 // Core
-import Link from 'next/link'
 import { useCallback, useEffect, useState } from 'react'
-// Functions
-import { toKebabCase } from '@/src/utils/Functions'
 // Hooks
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
 // Types
 import { ServiceObject } from '@/src/types/objectsTypes'
+// Components
+import ServiceCard from '@/src/components/CardsRelated/ServiceCard'
 
 /* eslint-disable react-hooks/exhaustive-deps */
 export default function Page() {
@@ -26,22 +25,45 @@ export default function Page() {
         fetchData().then()
     }, [])
 
+    // Filters
+    const cyberServices = services.filter((s) => s.type === 'cyber')
+    const softwareServices = services.filter((s) => s.type === 'software')
+
     return (
-        <div>
-            <h1>Services</h1>
-            <div className='grid grid-cols-4 gap-2'>
-                {services.length > 0 &&
-                    services.map((service, idx) => (
-                        <Link
-                            href={`/services/${toKebabCase(service.name)}`}
-                            key={`service-${idx}`}
-                            className='border-2 border-neutral-300 p-4 rounded-lg shadow-md'
-                        >
-                            <h2 className='font-bold'>{service.name}</h2>
-                            <p className='truncate'>{service.description}</p>
-                        </Link>
+        <div className='space-y-12 mb-16'>
+            {/* Cyber Security */}
+            <section>
+                <h2 className='text-2xl font-semibold mb-6 mt-15 text-center'>
+                    Our Cyber Security Services
+                </h2>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                    {cyberServices.map((service, idx) => (
+                        <ServiceCard
+                            key={`cyber-${idx}`}
+                            logo={service.logo}
+                            name={service.name}
+                            description={service.description}
+                        />
                     ))}
-            </div>
+                </div>
+            </section>
+
+            {/* Software */}
+            <section>
+                <h2 className='text-2xl font-semibold mb-6 mt-4 text-center'>
+                    Our Software Services
+                </h2>
+                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
+                    {softwareServices.map((service, idx) => (
+                        <ServiceCard
+                            key={`software-${idx}`}
+                            logo={service.logo}
+                            name={service.name}
+                            description={service.description}
+                        />
+                    ))}
+                </div>
+            </section>
         </div>
     )
 }

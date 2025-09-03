@@ -9,16 +9,16 @@ import { ServiceCardProps } from '@/src/types/propsTypes'
 import '@/src/styles/components/CardsRelated/ServiceCard.css'
 
 export default function ServiceCard({
-    imgSrc,
     name,
     description,
+    logo,
 }: ServiceCardProps) {
     return (
         <div className='service-card'>
             {/* Logo */}
             <div className='service-card-logo'>
                 <Image
-                    src={imgSrc}
+                    src={logo}
                     alt={name + ' logo'}
                     width={64}
                     height={64}

@@ -3,13 +3,15 @@ import { NextResponse } from 'next/server'
 // Types
 import { ServiceObject } from '@/src/types/objectsTypes'
 
-// Shared mock data (could also be moved to a separate file to avoid duplication)
+// Shared mock data
 export const services: ServiceObject[] = [
     {
         imgSrc: '/assets/images/services/web-penetration-testing.svg',
+        logo: '/assets/images/services/web-penetration-testing-logo.svg',
         name: 'Web Penetration Testing',
         description:
             'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+        type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/web-penetration-testing2.svg',
@@ -40,9 +42,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/network-penetration-testing.svg',
+        logo: '/assets/images/services/network-penetration-testing-logo.svg',
         name: 'Network Penetration Testing',
         description:
             'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+        type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/network-penetration-testing2.svg',
@@ -67,9 +71,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/auditing.svg',
+        logo: '/assets/images/services/auditing-logo.svg',
         name: 'Auditing',
         description:
             'Letting CyberGuardX LLC conduct your Security Auditing will reduce the chances of cyber threats going undetected, compliance violations, and security configurations that could expose sensitive data, as many organizations suffer breaches and reputational loss due to weak controls and poor security oversight.',
+        type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/auditing2.svg',
@@ -94,9 +100,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/grc.svg',
+        logo: '/assets/images/services/grc-logo.svg',
         name: 'GRC',
         description:
             'Letting CyberGuardX LLC handle your Governance, Risk, and Compliance will minimize your organization’s exposure to regulatory fines, operational risks, and data breaches . Our specialists conduct a full assessment of your GRC framework to uncover critical gaps that threaten compliance and business continuity. then help you understand, address, and strengthen your controls to meet industry standards and requirements',
+        type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/grc2.svg',
@@ -121,9 +129,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/soc.svg',
+        logo: '/assets/images/services/soc-logo.svg',
         name: 'SOC As a Service',
         description:
             'Hackers don’t keep office hours, and threats can surface at any moment. With SOC-as-a-Service, your systems are monitored 24/7 to detect and respond to attacks in real time. This ensures incidents are contained early, minimizing damage and keeping your business secure.',
+        type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/soc2.svg',
@@ -148,9 +158,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/mobile-penetration-testing.svg',
+        logo: '/assets/images/services/mobile-penetration-testing-logo.svg',
         name: 'Mobile Penetration Testing',
         description:
             'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+        type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/mobile-penetration-testing2.svg',
@@ -175,9 +187,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/saas.svg',
+        logo: '/assets/images/services/saas-logo.svg',
         name: 'SaaS Solutions',
         description:
             'Instant access to powerful cloud software with no setup required. Always secure, updated, and ready to scale with your business. Flexible solutions that save time, cut costs, and boost efficiency.',
+        type: 'software',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/saas2.svg',
@@ -202,9 +216,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/customized.svg',
+        logo: '/assets/images/services/customized-logo.svg',
         name: 'Customized Software Development',
         description:
             'We build software fully tailored to your business processes, giving you complete control over features, design, and integrations. Our solutions are flexible, scalable, and designed to grow with you. With customized development, you get exactly what you need — no unnecessary extras.',
+        type: 'software',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/customized2.svg',
@@ -229,9 +245,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/maintenance.svg',
+        logo: '/assets/images/services/maintenance-logo.svg',
         name: 'Maintenance and Support',
         description:
             'Our maintenance and support services ensure your systems remain secure, reliable, and optimized for peak performance. With continuous monitoring, proactive updates, and rapid assistance, we give you the confidence to focus on growth while we handle the technical side.',
+        type: 'software',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/maintenance2.svg',
@@ -256,9 +274,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/ai.svg',
+        logo: '/assets/images/services/ai-logo.svg',
         name: 'AI and Automation Services',
         description:
             'Our AI and automation services help businesses save time, reduce costs, and boost efficiency. From chatbots and OCR to predictive analytics, we provide smart tools that optimize workflows and deliver valuable insights. With intelligent automation.',
+        type: 'software',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/ai2.svg',
@@ -283,9 +303,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/cloud.svg',
+        logo: '/assets/images/services/cloud-logo.svg',
         name: 'Cloud Solutions and Integration',
         description:
             'Seamless migration, hosting, and integration on leading cloud platforms like AWS, Azure, and GCP. Our solutions ensure your systems stay connected, scalable, and secure. With expert cloud management.',
+        type: 'software',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/cloud2.svg',
@@ -310,9 +332,11 @@ export const services: ServiceObject[] = [
     },
     {
         imgSrc: '/assets/images/services/web.svg',
+        logo: '/assets/images/services/web-logo.svg',
         name: 'Web Application Development',
         description:
             'We build fast, secure, and responsive web applications that deliver a seamless user experience across all devices. Our platforms are designed with the latest technologies to keep your business future-ready and competitive. Flexible and scalable.',
+        type: 'software',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/web2.svg',

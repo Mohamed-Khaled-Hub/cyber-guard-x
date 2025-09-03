@@ -67,7 +67,7 @@ export type OurTeamCardProps = TeamMemberObject
 
 export type ReviewCardProps = ReviewObject
 
-export type ServiceCardProps = ServiceObject
+export type ServiceCardProps = Omit<ServiceObject, 'imgSrc' | 'type'>
 
 export type MiniServiceCardProps = ServiceObject
 

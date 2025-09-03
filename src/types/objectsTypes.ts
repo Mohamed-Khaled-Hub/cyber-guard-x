@@ -12,7 +12,9 @@ export type TeamMemberObject = {
 
 export type ServiceObject = {
     imgSrc: string
+    logo: string
     name: string
+    type: 'software' | 'cyber'
     description: string
     extraInfo?: {
         imgSrc: string
