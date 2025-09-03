@@ -1,41 +1,87 @@
 @import '../../globals.css';
 
-.about-page {
-    @apply flex flex-col gap-16 px-6 md:px-16 lg:px-24 py-12;
+div.about-page {
+    @apply max-w-7xl mx-auto px-4 py-12 space-y-16;
 }
 
-.about-page .who-we-are {
-    @apply bg-purple-600 text-white rounded-lg p-8 text-center shadow-md;
+/* Who Are We */
+div.about-page section.who-we-are {
+    @apply grid grid-cols-1 md:grid-cols-2 gap-8 items-center;
 }
 
-.about-page .who-we-are h2 {
+div.about-page div.who-we-are-img {
+    @apply relative w-full h-80 md:h-[400px] rounded-xl shadow-lg overflow-hidden;
+}
+
+div.about-page div.who-we-are-text {
+    @apply bg-gradient-to-r from-purple-700 to-blue-500 text-white p-8 rounded-xl shadow-lg;
+}
+
+div.about-page div.who-we-are-text h2 {
     @apply text-2xl font-bold mb-4;
 }
 
-.about-page .who-we-are p {
-    @apply text-base leading-relaxed;
+div.about-page div.who-we-are-text p {
+    @apply text-base text-white leading-relaxed;
 }
 
-.reviews {
-    @apply flex flex-col items-center gap-18;
-}
-
-.reviews h2 {
-    @apply text-2xl font-bold;
-}
-
-.reviews-container {
-    @apply flex flex-wrap justify-center gap-8 w-full;
-}
-
-.our-team {
+/* Reviews */
+section.reviews {
     @apply flex flex-col items-center gap-8;
 }
 
-.our-team h2 {
+section.reviews h2 {
+    @apply text-center text-2xl font-bold;
+}
+
+div.reviews-slider {
+    @apply relative flex items-center justify-center max-w-6xl mx-auto w-full;
+}
+
+div.reviews-track-wrapper {
+    @apply overflow-hidden w-full;
+}
+
+div.reviews-track {
+    @apply flex items-center justify-center relative;
+}
+
+div.reviews-track.no-transition {
+    transition: none !important;
+}
+
+div.review-slide {
+    @apply flex-shrink-0 flex justify-center items-center;
+    width: 33.3333%;
+    padding: 0 12px;
+}
+
+div.review-slide > * {
+    @apply w-full;
+}
+
+button.reviews-arrow {
+    @apply absolute top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-3 cursor-pointer z-20
+    hover:bg-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out;
+}
+
+button.reviews-arrow.left {
+    @apply -left-12;
+}
+
+button.reviews-arrow.right {
+    @apply -right-12;
+}
+
+/* Our Team */
+section.our-team {
+    @apply flex flex-col items-center justify-center gap-8;
+}
+
+section.our-team h2 {
     @apply text-2xl font-bold;
 }
 
-.team-container {
-    @apply flex flex-wrap justify-center gap-8 w-full;
+div.team-container {
+    @apply w-fit grid grid-cols-1 md:grid-cols-3 gap-6 text-center;
 }

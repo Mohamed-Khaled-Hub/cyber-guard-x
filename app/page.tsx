@@ -1,10 +1,10 @@
 'use client'
 
 // Core
+import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
-import Link from 'next/link'
 // Components
 import MiniServiceCard from '@/src/components/CardsRelated/MiniServiceCard'
 import Counter from '@/src/components/UIRelated/Counter'
