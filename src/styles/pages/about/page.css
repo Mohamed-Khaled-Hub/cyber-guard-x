@@ -4,15 +4,15 @@
     @apply flex flex-col gap-16 px-6 md:px-16 lg:px-24 py-12;
 }
 
-.who-we-are {
+.about-page .who-we-are {
     @apply bg-purple-600 text-white rounded-lg p-8 text-center shadow-md;
 }
 
-.who-we-are h2 {
+.about-page .who-we-are h2 {
     @apply text-2xl font-bold mb-4;
 }
 
-.who-we-are p {
+.about-page .who-we-are p {
     @apply text-base leading-relaxed;
 }
 
