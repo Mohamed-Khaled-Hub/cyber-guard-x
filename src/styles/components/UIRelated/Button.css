@@ -3,7 +3,12 @@
 a.btn,
 button.btn {
     @apply min-w-24 px-4 py-2 rounded-lg font-medium text-sm transition-colors duration-200 cursor-pointer
-    focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-center;
+    focus:outline-none disabled:opacity-50 disabled:cursor-not-allowed text-center inline-block;
+}
+
+/* Ensure full width links display as block */
+a.btn.w-full {
+    @apply block;
 }
 
 a.btn-primary,
