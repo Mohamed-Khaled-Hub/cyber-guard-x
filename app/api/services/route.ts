@@ -10,13 +10,13 @@ export const services: ServiceObject[] = [
         logo: '/assets/images/services/web-penetration-testing-logo.svg',
         name: 'Web Penetration Testing',
         description:
-            'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+            ' Reduces the risk of being hacked or exposed to critical vulnerabilities that could compromise sensitive data. Many organizations suffer due to poor development practices and lack of security awareness. Our expert researchers thoroughly examine your applications, identify the most critical flaws, and provide clear guidance to help you understand, reproduce, and mitigate vulnerabilities before attackers can exploit them.',
         type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/web-penetration-testing2.svg',
                 description:
-                    'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+                    'A detailed list of vulnerabilities with classification and threat levels Documentation of corrective changes applied during the test Records of devices, systems, and protocols used Immediate fixes along with long-term recommendations',
             },
         ],
         whatWeCanOffer: [
@@ -45,13 +45,13 @@ export const services: ServiceObject[] = [
         logo: '/assets/images/services/network-penetration-testing-logo.svg',
         name: 'Network Penetration Testing',
         description:
-            'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+            'Hackers exploit weaknesses in network architecture to gain access to sensitive data such as personal information and financial systems, they can steal data, extort money. An infrastructure penetration test orensures that your systems and security measures are aligned with best practices. At the time of testing, no standard or publicly known weaknesses remain in the target system, and any discovered bugs can be fixed before they lead to an attack or security breach',
         type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/network-penetration-testing2.svg',
                 description:
-                    'comprehensive penetration testing services to identify system vulnerabilities, validate current security measures, and provide a complete remedy roadmap',
+                    'Brief on tests conducted, key findings, and achievements List of vulnerabilities with classification and threat levels Corrective changes applied during the process Documentation of devices, systems, and protocols used Immediate fixes and long-term recommendations',
             },
         ],
         whatWeCanOffer: [
@@ -161,13 +161,13 @@ export const services: ServiceObject[] = [
         logo: '/assets/images/services/mobile-penetration-testing-logo.svg',
         name: 'Mobile Penetration Testing',
         description:
-            'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+            ' Mobile Application Penetration Testing is the process of evaluating the security of mobile applications to uncover vulnerabilities that could put sensitive data at risk. Our mobile app pen test bring extensive experience in infrastructure and web penetration testing, This expertise enables us to thoroughly assess native apps, hybrid apps, web apps, and advanced web applications, ensuring a complete view of your mobile security and provide a complete remedy roadmap',
         type: 'cyber',
         extraInfo: [
             {
                 imgSrc: '/assets/images/services/mobile-penetration-testing2.svg',
                 description:
-                    'comprehensive penetration testing services to identify system vulnerabilities,validate current security measures, and provide a complete remedy roadmap',
+                    'A complete report on the mobile app’s security posture Identified vulnerabilities with classification and risk levels Testing insights across native, hybrid, and web-based app components Assessment of backend integrations and data flow security',
             },
         ],
         whatWeCanOffer: [

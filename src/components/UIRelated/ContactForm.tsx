@@ -8,6 +8,11 @@ import Button from '@/src/components/UIRelated/Button'
 // Style
 import '@/src/styles/components/UIRelated/ContactForm.css'
 
+interface ApiResponse {
+    success: boolean
+    message: string
+}
+
 export default function ContactForm() {
     const [formData, setFormData] = useState({
         firstName: '',
@@ -17,14 +22,64 @@ export default function ContactForm() {
         message: '',
     })
 
+    const [isSubmitting, setIsSubmitting] = useState(false)
+    const [submitStatus, setSubmitStatus] = useState<{
+        type: 'success' | 'error' | null
+        message: string
+    }>({ type: null, message: '' })
+
     const handleChange = (field: keyof typeof formData) => (value: string) => {
         setFormData((prev) => ({ ...prev, [field]: value }))
+        // Clear status when user starts typing
+        if (submitStatus.type) {
+            setSubmitStatus({ type: null, message: '' })
+        }
     }
 
-    const handleSubmit = (e: FormEvent) => {
+    const handleSubmit = async (e: FormEvent) => {
         e.preventDefault()
-        console.log('Form submitted:', formData)
-        // 👉 Add API call here
+        setIsSubmitting(true)
+        setSubmitStatus({ type: null, message: '' })
+
+        try {
+            const response = await fetch('/api/contact', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(formData),
+            })
+
+            const data: ApiResponse = await response.json()
+
+            if (data.success) {
+                setSubmitStatus({
+                    type: 'success',
+                    message: 'Thank you! Your message has been sent successfully. We\'ll get back to you soon.',
+                })
+                // Reset form
+                setFormData({
+                    firstName: '',
+                    lastName: '',
+                    email: '',
+                    phone: '',
+                    message: '',
+                })
+            } else {
+                setSubmitStatus({
+                    type: 'error',
+                    message: data.message || 'Something went wrong. Please try again.',
+                })
+            }
+        } catch (error) {
+            console.error('Error submitting form:', error)
+            setSubmitStatus({
+                type: 'error',
+                message: 'Network error. Please check your connection and try again.',
+            })
+        } finally {
+            setIsSubmitting(false)
+        }
     }
 
     return (
@@ -68,11 +123,23 @@ export default function ContactForm() {
                 className='contact-textarea'
             />
 
+            {/* Status Message */}
+            {submitStatus.type && (
+                <div
+                    className={`status-message ${
+                        submitStatus.type === 'success' ? 'status-success' : 'status-error'
+                    }`}
+                >
+                    {submitStatus.message}
+                </div>
+            )}
+
             <Button
                 type='submit'
                 variant='service'
-                label='Send Email'
+                label={isSubmitting ? 'Sending...' : 'Send Email'}
                 className='w-full'
+                disabled={isSubmitting}
             />
         </form>
     )
