@@ -7,7 +7,7 @@ import '@/src/styles/components/CardsRelated/MiniServiceCard.css'
 
 export default function MiniServiceCard({
     imgSrc,
-    title,
+    name,
     description,
 }: MiniServiceCardProps) {
     return (
@@ -15,14 +15,14 @@ export default function MiniServiceCard({
             <div className='mini-card-logo'>
                 <Image
                     src={imgSrc}
-                    alt={title + ' icon'}
+                    alt={name + ' icon'}
                     width={64}
                     height={64}
                     className='mini-card-logo-img'
                 />
             </div>
 
-            <p className='mini-card-title'>{title}</p>
+            <p className='mini-card-title'>{name}</p>
             <p className='mini-card-description'>{description}</p>
         </div>
     )

@@ -10,9 +10,9 @@ div.our-team-card img {
 }
 
 p.team-member-name {
-    @apply font-semibold text-gray-900 mt-2;
+    @apply font-semibold truncate text-gray-900 mt-2;
 }
 
 p.team-member-role {
-    @apply text-sm text-c8;
+    @apply text-sm truncate text-c8;
 }
