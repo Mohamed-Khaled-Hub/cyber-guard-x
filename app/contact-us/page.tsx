@@ -52,6 +52,8 @@ export default function Page() {
                     <Button
                         type='submit'
                         href='https://calendly.com/youssefarag3/30min'
+                        target='_blank'
+                        rel='noopener noreferrer'
                         variant='service'
                         label='Schedule a Call'
                         className='w-full mt-12'

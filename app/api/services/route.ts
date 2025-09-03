@@ -21,22 +21,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/assets/images/services/web-penetration-testing-off1.svg',
-                name: 'Chatbots',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'a tailored chatbot designed to inhance your buiseness',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/assets/images/services/web-penetration-testing-off2.svg',
-                name: 'Chatbots',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'a tailored chatbot designed to inhance your buiseness',
+                    'From design and development to deployment and ongoing support',
             },
             {
-                imgSrc: '/assets/images/services/web-penetration-testing-off3.svg',
-                name: 'Chatbots',
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
                 description:
-                    'a tailored chatbot designed to inhance your buiseness',
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -56,16 +56,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-chat-int.jpg',
-                name: 'Chat Integrations',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Seamless connection with CRM and third-party APIs.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-chat-analytics.jpg',
-                name: 'Analytics Dashboard',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Track user conversations and performance metrics.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -85,16 +91,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -114,16 +126,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -143,16 +161,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -172,16 +196,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -201,16 +231,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -230,16 +266,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -259,16 +301,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -288,16 +336,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -317,16 +371,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
@@ -346,16 +406,22 @@ export const services: ServiceObject[] = [
         ],
         whatWeCanOffer: [
             {
-                imgSrc: '/images/services/offer-custom.jpg',
-                name: 'Custom Development',
+                imgSrc: '/assets/images/services/offer1.svg',
+                name: 'Proven Expertise',
                 description:
-                    'Fully tailored systems to meet specific business workflows.',
+                    'Experienced team delivering reliable and innovative software solutions',
             },
             {
-                imgSrc: '/images/services/offer-support.jpg',
-                name: 'Long-Term Support',
+                imgSrc: '/assets/images/services/offer2.svg',
+                name: 'End-to-End Services',
                 description:
-                    'Ongoing updates, bug fixes, and new feature rollouts.',
+                    'From design and development to deployment and ongoing support',
+            },
+            {
+                imgSrc: '/assets/images/services/offer3.svg',
+                name: 'Scalable Solutions',
+                description:
+                    'Applications that grow with your business and adapt to your needs.',
             },
         ],
     },
