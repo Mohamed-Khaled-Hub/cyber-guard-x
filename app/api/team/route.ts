@@ -6,19 +6,19 @@ import { TeamMemberObject } from '@/src/types/objectsTypes'
 export async function GET(): Promise<NextResponse<TeamMemberObject[]>> {
     const team: TeamMemberObject[] = [
         {
-            imgSrc: '/images/team/member1.jpg',
-            name: 'Alice Johnson',
+            imgSrc: '/assets/images/team/member1.png',
+            name: 'Mohammed Mekkawy',
             role: 'Cybersecurity Analyst',
         },
         {
-            imgSrc: '/images/team/member2.jpg',
-            name: 'Robert Wilson',
-            role: 'Penetration Tester',
+            imgSrc: '/assets/images/team/member2.png',
+            name: 'Moataz Saleh',
+            role: 'Software Manager',
         },
         {
-            imgSrc: '/images/team/member3.jpg',
-            name: 'Emily Davis',
-            role: 'Security Consultant',
+            imgSrc: '/assets/images/team/member3.png',
+            name: 'Naiera Zaki',
+            role: 'Marketing Manger',
         },
     ]
 

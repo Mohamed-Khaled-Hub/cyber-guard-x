@@ -1,17 +1,18 @@
 @import '../../globals.css';
 
 div.our-team-card {
-    @apply bg-neutral-100 rounded-lg flex flex-col gap-2 p-4 w-60 h-64 items-center text-center justify-center;
+    @apply bg-neutral-100 rounded-lg shadow-md flex flex-col gap-2 p-6 w-48 h-56
+    items-center text-center justify-start transition-transform duration-200 hover:scale-105;
 }
 
 div.our-team-card img {
-    @apply rounded-full w-28 h-28;
+    @apply rounded-full w-24 h-24 object-cover shadow-sm;
 }
 
 p.team-member-name {
-    @apply font-bold;
+    @apply font-semibold text-gray-900 mt-2;
 }
 
 p.team-member-role {
-    @apply text-c8;
+    @apply text-sm text-c8;
 }
