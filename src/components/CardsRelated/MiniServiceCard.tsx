@@ -6,7 +6,7 @@ import { MiniServiceCardProps } from '@/src/types/propsTypes'
 import '@/src/styles/components/CardsRelated/MiniServiceCard.css'
 
 export default function MiniServiceCard({
-    imgSrc,
+    logo,
     name,
     description,
 }: MiniServiceCardProps) {
@@ -14,7 +14,7 @@ export default function MiniServiceCard({
         <div className='mini-card'>
             <div className='mini-card-logo'>
                 <Image
-                    src={imgSrc}
+                    src={logo}
                     alt={name + ' icon'}
                     width={64}
                     height={64}

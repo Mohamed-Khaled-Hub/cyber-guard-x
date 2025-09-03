@@ -25,19 +25,19 @@ export default function HomePage() {
                 <div className='why-choose-us'>
                     {[
                         {
-                            imgSrc: '/assets/images/home-page/integrity.svg',
+                            logo: '/assets/images/home-page/integrity.svg',
                             name: 'Integrity',
                             description:
                                 'Acting with strong ethics is the foundation of trust',
                         },
                         {
-                            imgSrc: '/assets/images/home-page/integrity.svg',
+                            logo: '/assets/images/home-page/integrity.svg',
                             name: 'Integrity',
                             description:
                                 'Acting with strong ethics is the foundation of trust',
                         },
                         {
-                            imgSrc: '/assets/images/home-page/integrity.svg',
+                            logo: '/assets/images/home-page/integrity.svg',
                             name: 'Integrity',
                             description:
                                 'Acting with strong ethics is the foundation of trust',
@@ -45,7 +45,7 @@ export default function HomePage() {
                     ].map((item, idx) => (
                         <MiniServiceCard
                             key={`mini-service-${idx}`}
-                            imgSrc={item.imgSrc}
+                            logo={item.logo}
                             name={item.name}
                             description={item.description}
                         />

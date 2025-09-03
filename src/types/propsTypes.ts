@@ -69,7 +69,7 @@ export type ReviewCardProps = ReviewObject
 
 export type ServiceCardProps = Omit<ServiceObject, 'imgSrc' | 'type'>
 
-export type MiniServiceCardProps = ServiceObject
+export type MiniServiceCardProps = Omit<ServiceObject, 'imgSrc' | 'type'>
 
 // Providers
 export type AllProvidersProps = PropsWithChildren

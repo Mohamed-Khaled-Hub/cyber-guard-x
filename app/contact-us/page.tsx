@@ -6,19 +6,17 @@ import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 // Hooks
 import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 // Components
+import Button from '@/src/components/UIRelated/Button'
 import ContactForm from '@/src/components/UIRelated/ContactForm'
 // Style
 import '@/src/styles/pages/ContactPage.css'
-import Button from '@/src/components/UIRelated/Button'
 
 export default function Page() {
-    const { contact, name } = useWebsiteInfo()
+    const { contact } = useWebsiteInfo()
 
     return (
         <div className='contact-page'>
             {/* Page Title */}
-            {/* <h1 className='contact-title'>Contact {name}</h1> */}
-
             <div className='contact-grid'>
                 {/* Left Column – Contact Info */}
                 <div className='contact-info'>
@@ -61,7 +59,6 @@ export default function Page() {
 
                 {/* Right Column – Contact Form */}
                 <div className='contact-form-wrapper'>
-                    {/* <h2 className='contact-info-title'>Send Us a Message</h2> */}
                     <ContactForm />
                 </div>
             </div>
