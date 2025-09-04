@@ -175,6 +175,7 @@ export default function Page({ params }: ServicesPageParamsType) {
                         <Button
                             label={servicePageData.button.order}
                             variant='service'
+                            href='/contact-us'
                         />
                     </motion.div>
                 </>

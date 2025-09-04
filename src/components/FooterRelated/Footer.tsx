@@ -55,12 +55,13 @@ export default function Footer() {
                 <div className='footer-actions-buttons'>
                     <Button
                         variant='secondary'
-                        href='/contact'
+                        href='/contact-us'
                         label='Contact Us'
                     />
                     <Button
                         variant='primary'
-                        href='/contact'
+                        href='https://calendly.com/youssefarag3/30min'
+                        target='_blank'
                         label='Schedule a call'
                     />
                 </div>
@@ -132,7 +133,9 @@ export default function Footer() {
                                         .map((service, idx) => (
                                             <li key={`service-${idx}`}>
                                                 <Link
-                                                    href={`/services/${toKebabCase(service.name)}`}
+                                                    href={`/services/${toKebabCase(
+                                                        service.name
+                                                    )}`}
                                                 >
                                                     {service.name}
                                                 </Link>
