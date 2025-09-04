@@ -35,7 +35,7 @@ div.home-page {
     }
 
     section.why-choose-us div.why-choose-us-cards {
-        @apply w-fit grid grid-cols-1 md:grid-cols-3 gap-6;
+        @apply w-fit grid grid-cols-1 md:grid-cols-3 gap-4;
     }
 
     /* Our Partners */
@@ -61,7 +61,7 @@ div.home-page {
     }
 
     section.our-services a.service-card {
-        @apply bg-neutral-100 shadow-md rounded-lg p-10 text-center font-semibold text-xl
+        @apply bg-neutral-100 shadow-md rounded-lg p-10 h-56 text-center font-semibold text-xl
         flex flex-col items-center gap-4;
     }
 

@@ -74,12 +74,12 @@ export default function HomePage() {
                 {
                     img: '/assets/images/home-page/cyber.svg',
                     label: 'Cyber Security Services',
-                    href: '/services',
+                    href: '/services?type=cyber',
                 },
                 {
                     img: '/assets/images/home-page/software.svg',
                     label: 'Software Services',
-                    href: '/services',
+                    href: '/services?type=software',
                 },
             ],
             button: { label: 'Explore Our Services', href: '/services' },

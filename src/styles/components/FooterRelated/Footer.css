@@ -94,6 +94,6 @@ div.footer-contact div {
 }
 
 div.footer-bottom {
-    @apply mt-10 bg-black py-4 text-center text-white text-sm;
-    @apply flex items-center justify-center gap-2;
+    @apply mt-10 bg-black py-4 text-center text-white text-xs sm:text-sm;
+    @apply flex flex-wrap items-center justify-center gap-2;
 }

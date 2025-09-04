@@ -48,6 +48,7 @@ export default function Page({ params }: ServicesPageParamsType) {
         },
         button: {
             order: 'Order this service',
+            href: '/contact-us',
         },
     }
 
@@ -174,6 +175,7 @@ export default function Page({ params }: ServicesPageParamsType) {
                         </div>
                         <Button
                             label={servicePageData.button.order}
+                            href={servicePageData.button.href}
                             variant='service'
                             href='/contact-us'
                         />

@@ -36,9 +36,9 @@ button.reviews-arrow {
 }
 
 button.reviews-arrow.left {
-    @apply -left-12;
+    @apply -left-6;
 }
 
 button.reviews-arrow.right {
-    @apply -right-12;
+    @apply -right-6;
 }

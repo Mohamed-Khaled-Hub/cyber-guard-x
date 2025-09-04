@@ -13,7 +13,7 @@ div.about-page {
     }
 
     div.who-we-are-text {
-        @apply bg-gradient-to-r from-purple-700 to-blue-500 text-white p-8 rounded-xl shadow-lg;
+        @apply bg-gradient-to-r from-c5 to-c4 text-white p-8 rounded-xl shadow-lg;
     }
 
     div.who-we-are-text h2 {
