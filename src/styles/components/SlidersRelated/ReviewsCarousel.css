@@ -1,0 +1,44 @@
+@import '../../globals.css';
+
+/* Container */
+div.reviews-slider {
+    @apply relative flex items-center justify-center max-w-6xl mx-auto w-full h-auto;
+}
+
+/* Track wrapper */
+div.reviews-track-wrapper {
+    @apply overflow-hidden w-full max-w-full h-auto;
+}
+
+/* Track */
+div.reviews-track {
+    @apply flex w-full h-auto transition-transform duration-500 ease-in-out;
+}
+
+div.reviews-track.no-transition {
+    @apply transition-none;
+}
+
+/* Slide */
+div.review-slide {
+    @apply h-auto mt-14 px-3 box-border;
+    flex: 0 0 calc(100% / var(--spv));
+}
+
+div.review-slide > * {
+    @apply w-full;
+}
+
+/* Arrows */
+button.reviews-arrow {
+    @apply absolute top-1/2 -translate-y-1/2 bg-white shadow-md rounded-full p-3 cursor-pointer z-20
+    hover:bg-gray-100 hover:shadow-xl hover:scale-105 transition-all duration-300 ease-in-out;
+}
+
+button.reviews-arrow.left {
+    @apply -left-12;
+}
+
+button.reviews-arrow.right {
+    @apply -right-12;
+}

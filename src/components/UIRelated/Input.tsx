@@ -1,6 +1,6 @@
 'use client'
 
-import { ChangeEvent } from 'react'
+import { ChangeEvent, TextareaHTMLAttributes, InputHTMLAttributes } from 'react'
 // Functions
 import { renderClasses, sanitizeInput } from '@/src/utils/Functions'
 // Types
@@ -43,7 +43,7 @@ export default function Input({
 
             {as === 'textarea' ? (
                 <textarea
-                    {...(props as React.TextareaHTMLAttributes<HTMLTextAreaElement>)}
+                    {...(props as TextareaHTMLAttributes<HTMLTextAreaElement>)}
                     placeholder={placeholder}
                     onChange={handleChange}
                     className={renderClasses(
@@ -54,7 +54,7 @@ export default function Input({
                 />
             ) : (
                 <input
-                    {...(props as React.InputHTMLAttributes<HTMLInputElement>)}
+                    {...(props as InputHTMLAttributes<HTMLInputElement>)}
                     placeholder={placeholder}
                     onChange={handleChange}
                     className={renderClasses(

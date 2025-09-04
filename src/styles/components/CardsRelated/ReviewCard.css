@@ -1,24 +1,25 @@
 @import '../../globals.css';
 
-.review-card {
+div.review-card {
     @apply relative bg-neutral-100 rounded-lg shadow-md w-80 p-6 pt-10
-    flex flex-col items-center text-center transition-transform duration-200 hover:scale-105;
-}
+    flex flex-col items-center text-center transition-transform duration-200 hover:scale-105
+    h-56;
 
-.review-card-img-wrapper {
-    @apply absolute -top-12 flex items-center justify-center;
-    width: 96px;
-    height: 96px;
-}
+    div.review-card-img-wrapper {
+        @apply absolute -top-12 flex items-center justify-center;
+        width: 96px;
+        height: 96px;
+    }
 
-.review-card-img {
-    @apply rounded-full w-24 h-24 object-cover border-4 border-white shadow-md;
-}
+    img.review-card-img {
+        @apply rounded-full w-24 h-24 object-cover border-4 border-white shadow-md;
+    }
 
-.review-card-name {
-    @apply font-semibold text-gray-900 mt-4;
-}
+    p.review-card-name {
+        @apply font-semibold text-gray-900 mt-4;
+    }
 
-.review-card-text {
-    @apply text-gray-600 mt-2 text-sm leading-relaxed;
+    p.review-card-text {
+        @apply text-gray-600 mt-2 text-sm leading-relaxed overflow-hidden text-ellipsis line-clamp-5;
+    }
 }

@@ -1,0 +1,17 @@
+@import '../../globals.css';
+
+/* Fullscreen backdrop */
+div.loader-backdrop {
+    @apply fixed inset-0 w-full h-full flex items-center
+    justify-center bg-black/30 backdrop-blur-sm z-(--loader-z-index);
+}
+
+/* Container */
+div.loader {
+    @apply relative w-1/4 aspect-square flex items-center justify-center;
+}
+
+/* Lottie animation */
+.loader-lottie {
+    @apply w-full h-full;
+}

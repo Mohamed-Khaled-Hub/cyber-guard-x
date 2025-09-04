@@ -15,7 +15,6 @@ export default function ServiceCard({
 }: ServiceCardProps) {
     return (
         <div className='service-card'>
-            {/* Logo */}
             <div className='service-card-logo'>
                 <Image
                     src={logo}
@@ -25,14 +24,8 @@ export default function ServiceCard({
                     className='object-contain'
                 />
             </div>
-
-            {/* Name */}
             <p className='service-card-name'>{name}</p>
-
-            {/* Description */}
             <p className='service-card-description'>{description}</p>
-
-            {/* Learn More Link */}
             <Link
                 href={`/services/${toKebabCase(name)}`}
                 className='service-card-link'

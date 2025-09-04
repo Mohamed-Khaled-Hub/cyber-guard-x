@@ -2,56 +2,56 @@
 
 div.service-page {
     @apply flex flex-col gap-8 px-6 md:px-16 lg:px-24 py-12;
-}
 
-h1.service-title {
-    @apply text-3xl text-center font-bold mb-6;
-}
+    h1.service-title {
+        @apply text-3xl text-center font-bold mb-6;
+    }
 
-div.service-info {
-    @apply flex flex-col md:flex-row items-center gap-6 p-6 bg-white rounded-lg shadow-sm;
-}
+    div.service-info {
+        @apply flex flex-col md:flex-row items-center gap-6 p-6 bg-white rounded-lg shadow-sm;
+    }
 
-div.service-info.reversed {
-    @apply md:flex-row-reverse bg-neutral-100;
-}
+    div.service-info.reversed {
+        @apply md:flex-row-reverse bg-neutral-100;
+    }
 
-div.service-info img {
-    @apply w-full md:w-1/2 rounded-lg;
-}
+    div.service-info img {
+        @apply w-full md:w-1/2 rounded-lg;
+    }
 
-div.service-info p {
-    @apply text-base leading-relaxed text-gray-700;
-}
+    div.service-info p {
+        @apply text-base leading-relaxed text-gray-700;
+    }
 
-div.what-we-can-offer {
-    @apply flex flex-col items-center text-center gap-8 mt-12;
-}
+    div.what-we-can-offer {
+        @apply flex flex-col items-center text-center gap-8 mt-12;
+    }
 
-div.what-we-can-offer h2 {
-    @apply text-2xl font-bold;
-}
+    div.what-we-can-offer h2 {
+        @apply text-2xl font-bold;
+    }
 
-div.what-we-can-offer .btn {
-    @apply text-lg;
-}
+    div.what-we-can-offer .btn {
+        @apply text-lg;
+    }
 
-div.offers-container {
-    @apply px-8 grid grid-cols-1 md:grid-cols-3 gap-4 w-full;
-}
+    div.offers-container {
+        @apply px-8 grid grid-cols-1 md:grid-cols-3 gap-4 w-full;
+    }
 
-div.offer {
-    @apply flex flex-col items-center gap-2 p-4 bg-white rounded-lg shadow-sm;
-}
+    div.offer {
+        @apply flex flex-col items-center gap-2 p-4 bg-white rounded-lg shadow-sm;
+    }
 
-div.offer img {
-    @apply w-16 aspect-square;
-}
+    div.offer img {
+        @apply w-16 aspect-square;
+    }
 
-div.offer h3 {
-    @apply text-2xl font-semibold;
-}
+    div.offer h3 {
+        @apply text-2xl font-semibold;
+    }
 
-div.offer p {
-    @apply text-xl text-gray-600;
+    div.offer p {
+        @apply text-xl text-gray-600;
+    }
 }

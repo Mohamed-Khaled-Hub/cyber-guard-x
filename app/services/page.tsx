@@ -4,6 +4,7 @@
 import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
 // Components
+import Loader from '@/src/components/UIRelated/Loader'
 import ServiceCard from '@/src/components/CardsRelated/ServiceCard'
 // Hooks
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
@@ -17,7 +18,7 @@ export default function Page() {
     // Contexts
     const { getServices } = useCompanyData()
     // States
-    const [services, setServices] = useState<ServiceObject[]>([])
+    const [services, setServices] = useState<ServiceObject[] | null>(null)
 
     const fetchData = useCallback(async () => {
         const res = await getServices()
@@ -27,6 +28,11 @@ export default function Page() {
     useEffect(() => {
         fetchData().then()
     }, [])
+
+    // Show loader while fetching
+    if (services === null) {
+        return <Loader />
+    }
 
     // Filters
     const cyberServices = services.filter((s) => s.type === 'cyber')

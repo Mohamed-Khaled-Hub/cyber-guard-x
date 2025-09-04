@@ -1,16 +1,17 @@
 @import '../../globals.css';
 
 nav.nav {
-    @apply fixed w-full h-(--nav-height) top-0 left-0 z-(--nav-z-index) flex items-center;
-    @apply bg-c1 shadow-md md:px-6;
+    @apply fixed w-full h-(--nav-height) top-0 left-0 z-(--nav-z-index)
+    flex items-center bg-c1 shadow-md px-4;
 }
 
 div.nav-inner {
     @apply flex items-center justify-between w-full;
 }
 
+/* Desktop nav */
 ul.nav-list {
-    @apply flex flex-wrap items-center gap-4;
+    @apply hidden md:flex items-center gap-6;
 }
 
 li.nav-item {
@@ -21,6 +22,24 @@ a.nav-link {
     @apply text-neutral-400 font-medium transition-colors duration-200 hover:text-white;
 }
 
+/* Actions */
 div.nav-actions {
-    @apply flex items-center gap-4;
+    @apply flex items-center;
+}
+
+button.menu-toggle {
+    @apply text-white cursor-pointer focus:outline-none ml-4;
+}
+
+/* Mobile menu */
+div.mobile-menu {
+    @apply absolute top-(--nav-height) left-0 w-full bg-c1 shadow-md md:hidden;
+}
+
+ul.mobile-list {
+    @apply flex flex-col gap-4 p-6;
+}
+
+a.mobile-link {
+    @apply text-neutral-300 font-medium hover:text-white transition-colors duration-200;
 }

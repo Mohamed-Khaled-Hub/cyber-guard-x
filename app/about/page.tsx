@@ -4,13 +4,13 @@
 import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
-import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
+// Components
+import Loader from '@/src/components/UIRelated/Loader'
+import OurTeamCard from '@/src/components/CardsRelated/OurTeamCard'
+import ReviewsCarousel from '@/src/components/SlidersRelated/ReviewsCarousel'
+import AnimatedSection from '@/src/components/ContainersRelated/AnimatedSection'
 // Hooks
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
-// Components
-import ReviewCard from '@/src/components/CardsRelated/ReviewCard'
-import OurTeamCard from '@/src/components/CardsRelated/OurTeamCard'
-import AnimatedSection from '@/src/components/ContainersRelated/AnimatedSection'
 // Types
 import { ReviewObject, TeamMemberObject } from '@/src/types/objectsTypes'
 // Style
@@ -21,9 +21,8 @@ export default function Page() {
     // Contexts
     const { getTeam, getReviews } = useCompanyData()
     // States
-    const [current, setCurrent] = useState(0)
-    const [team, setTeam] = useState<TeamMemberObject[]>([])
-    const [reviews, setReviews] = useState<ReviewObject[]>([])
+    const [team, setTeam] = useState<TeamMemberObject[] | null>(null)
+    const [reviews, setReviews] = useState<ReviewObject[] | null>(null)
 
     const fetchTeams = useCallback(async () => {
         const res = await getTeam()
@@ -40,8 +39,10 @@ export default function Page() {
         fetchReviews().then()
     }, [])
 
-    const handleNext = () => setCurrent((prev) => prev + 1)
-    const handlePrev = () => setCurrent((prev) => prev - 1)
+    // Show loader while fetching
+    if (team === null || reviews === null) {
+        return <Loader />
+    }
 
     // Page Data
     const aboutPageData = {
@@ -132,52 +133,7 @@ We empower organizations through smart applications, advanced systems, and high-
                         <motion.h2 {...animations.reviewsHeading}>
                             {aboutPageData.reviews.title}
                         </motion.h2>
-                        <div className='reviews-slider'>
-                            <button
-                                onClick={handlePrev}
-                                className='reviews-arrow left'
-                            >
-                                <MdOutlineArrowBackIos />
-                            </button>
-
-                            <div className='reviews-track-wrapper'>
-                                <div className='reviews-track'>
-                                    {[-1, 0, 1].map((offset) => {
-                                        const index =
-                                            (current +
-                                                offset +
-                                                reviews.length) %
-                                            reviews.length
-                                        const review = reviews[index]
-                                        const isCenter = offset === 0
-
-                                        return (
-                                            <div
-                                                key={`${index}-${offset}`}
-                                                className={`review-slide ${
-                                                    isCenter
-                                                        ? 'active'
-                                                        : 'inactive'
-                                                }`}
-                                            >
-                                                <ReviewCard
-                                                    imgSrc={review.imgSrc}
-                                                    name={review.name}
-                                                    review={review.review}
-                                                />
-                                            </div>
-                                        )
-                                    })}
-                                </div>
-                            </div>
-
-                            <button
-                                onClick={handleNext}
-                                className='reviews-arrow right'
-                            >
-                                <MdOutlineArrowForwardIos />
-                            </button>
-                        </div>
+                        <ReviewsCarousel reviews={reviews} />
                     </section>
                 </AnimatedSection>
             )}

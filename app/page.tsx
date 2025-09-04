@@ -3,13 +3,13 @@
 // Core
 import Link from 'next/link'
 import Image from 'next/image'
+import { useEffect } from 'react'
 import { motion } from 'framer-motion'
-import { useEffect, useState } from 'react'
-import { MdOutlineArrowBackIos, MdOutlineArrowForwardIos } from 'react-icons/md'
 // Components
 import Button from '@/src/components/UIRelated/Button'
 import Counter from '@/src/components/UIRelated/Counter'
 import MiniServiceCard from '@/src/components/CardsRelated/MiniServiceCard'
+import PartnersSlider from '@/src/components/SlidersRelated/PartnersSlider'
 import AnimatedSection from '@/src/components/ContainersRelated/AnimatedSection'
 // Functions
 import { setTitleAndDesc } from '@/src/utils/Functions'
@@ -22,8 +22,6 @@ import '@/src/styles/pages/page.css'
 export default function HomePage() {
     // Contexts
     const { name, desc } = useWebsiteInfo()
-    // States
-    const [currentIndex, setCurrentIndex] = useState(0)
 
     // Page Data
     const homePageData = {
@@ -186,67 +184,10 @@ export default function HomePage() {
                     <motion.h2 {...homePageAnimations.fadeInUp}>
                         {homePageData.ourPartners.title}
                     </motion.h2>
-                    <div className='partners-slider'>
-                        <button
-                            className='partners-arrow left'
-                            onClick={() =>
-                                setCurrentIndex((prev) =>
-                                    prev === 0
-                                        ? homePageData.ourPartners.logos
-                                              .length -
-                                          homePageData.ourPartners.visibleCount
-                                        : prev - 1
-                                )
-                            }
-                        >
-                            <MdOutlineArrowBackIos />
-                        </button>
-
-                        <div className='partners-track-wrapper'>
-                            <div
-                                className='partners-track'
-                                style={{
-                                    transform: `translateX(-${
-                                        currentIndex *
-                                        (100 /
-                                            homePageData.ourPartners
-                                                .visibleCount)
-                                    }%)`,
-                                }}
-                            >
-                                {homePageData.ourPartners.logos.map(
-                                    (logo, idx) => (
-                                        <div
-                                            className='partner-logo'
-                                            key={`partner-${idx}`}
-                                        >
-                                            <Image
-                                                width={120}
-                                                height={60}
-                                                src={logo}
-                                                alt={`partner-${idx}`}
-                                            />
-                                        </div>
-                                    )
-                                )}
-                            </div>
-                        </div>
-
-                        <button
-                            className='partners-arrow right'
-                            onClick={() =>
-                                setCurrentIndex((prev) =>
-                                    prev >=
-                                    homePageData.ourPartners.logos.length -
-                                        homePageData.ourPartners.visibleCount
-                                        ? 0
-                                        : prev + 1
-                                )
-                            }
-                        >
-                            <MdOutlineArrowForwardIos />
-                        </button>
-                    </div>
+                    <PartnersSlider
+                        logos={homePageData.ourPartners.logos}
+                        visibleCount={homePageData.ourPartners.visibleCount}
+                    />
                 </section>
             </AnimatedSection>
 

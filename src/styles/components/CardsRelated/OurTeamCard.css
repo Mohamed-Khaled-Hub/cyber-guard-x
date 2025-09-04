@@ -3,16 +3,16 @@
 div.our-team-card {
     @apply bg-neutral-100 rounded-lg shadow-md flex flex-col gap-2 p-6 w-48 h-56
     items-center text-center justify-start transition-transform duration-200 hover:scale-105;
-}
 
-div.our-team-card img {
-    @apply rounded-full w-24 h-24 object-cover shadow-sm;
-}
+    div.our-team-card img {
+        @apply rounded-full w-24 h-24 object-cover shadow-sm;
+    }
 
-p.team-member-name {
-    @apply font-semibold truncate text-gray-900 mt-2;
-}
+    p.team-member-name {
+        @apply font-semibold truncate text-gray-900 mt-2;
+    }
 
-p.team-member-role {
-    @apply text-sm truncate text-c8;
+    p.team-member-role {
+        @apply text-sm truncate text-c8;
+    }
 }

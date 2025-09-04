@@ -13,7 +13,7 @@ import {
 } from '@/src/types/objectsTypes'
 
 // Layouts
-export type RootLayoutProps = PropsWithChildren
+export type LayoutProps = PropsWithChildren
 
 // Components
 export type ContainerProps = PropsWithChildren & {
@@ -70,6 +70,14 @@ export type ReviewCardProps = ReviewObject
 export type ServiceCardProps = Omit<ServiceObject, 'imgSrc' | 'type'>
 
 export type MiniServiceCardProps = Omit<ServiceObject, 'imgSrc' | 'type'>
+
+// Sliders
+export type ReviewsCarouselProps = { reviews: ReviewObject[] }
+
+export type PartnersSliderProps = {
+    logos: string[]
+    visibleCount: number
+}
 
 // Providers
 export type AllProvidersProps = PropsWithChildren

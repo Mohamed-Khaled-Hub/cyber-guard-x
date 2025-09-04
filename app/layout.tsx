@@ -7,11 +7,11 @@ import { mainFont } from '@/src/fonts/Fonts'
 // Providers
 import AllProviders from '@/src/providers/AllProviders'
 // Types
-import { RootLayoutProps } from '@/src/types/propsTypes'
+import { LayoutProps } from '@/src/types/propsTypes'
 // Style
 import '@/src/styles/layouts/layout.css'
 
-export default function RootLayout({ children }: RootLayoutProps) {
+export default function RootLayout({ children }: LayoutProps) {
     return (
         <html lang='en'>
             <body className={`${mainFont.className} antialiased`}>

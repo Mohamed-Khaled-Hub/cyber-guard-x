@@ -5,6 +5,7 @@ import Image from 'next/image'
 import { motion } from 'framer-motion'
 import { use, useCallback, useEffect, useState } from 'react'
 // Components
+import Loader from '@/src/components/UIRelated/Loader'
 import Button from '@/src/components/UIRelated/Button'
 // Hooks
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
@@ -33,6 +34,11 @@ export default function Page({ params }: ServicesPageParamsType) {
     useEffect(() => {
         fetchData().then()
     }, [])
+
+    // Show loader while fetching
+    if (service === null) {
+        return <Loader />
+    }
 
     // Page Data
     const servicePageData = {

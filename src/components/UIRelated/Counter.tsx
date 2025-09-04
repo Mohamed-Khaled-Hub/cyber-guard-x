@@ -10,7 +10,7 @@ import '@/src/styles/components/UIRelated/Counter.css'
 
 export default function Counter({ endNumber, numberFor }: CounterProps) {
     const { ref, inView } = useInView({
-        triggerOnce: false,
+        triggerOnce: true,
         threshold: 0.7,
     })
 
