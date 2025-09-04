@@ -1,0 +1,29 @@
+@import '../../globals.css';
+
+div.terms-page {
+    @apply max-w-4xl mx-auto px-6 py-12 space-y-8;
+}
+
+h1.terms-title {
+    @apply text-3xl font-bold text-center mb-4;
+}
+
+p.terms-updated {
+    @apply text-sm text-gray-500 text-center mb-8;
+}
+
+div.terms-sections {
+    @apply space-y-10;
+}
+
+section.terms-section {
+    @apply space-y-2;
+}
+
+h2.terms-section-title {
+    @apply text-xl font-semibold;
+}
+
+p.terms-section-text {
+    @apply text-gray-700 leading-relaxed;
+}

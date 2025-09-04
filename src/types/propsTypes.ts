@@ -11,7 +11,6 @@ import {
     ServiceObject,
     TeamMemberObject,
 } from '@/src/types/objectsTypes'
-import { ContactContextType } from '@/src/types/contextsTypes'
 
 // Layouts
 export type RootLayoutProps = PropsWithChildren
@@ -80,6 +79,10 @@ export type WebsiteInfoProviderProps = PropsWithChildren
 export type CompanyDataProviderProps = PropsWithChildren
 
 export type ContactProviderProps = PropsWithChildren
+
+export type AnimatedSectionProps = PropsWithChildren & {
+    className?: string
+}
 
 // Dynamic Page
 export type ServicesPageParamsType = {

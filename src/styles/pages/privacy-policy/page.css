@@ -1,0 +1,29 @@
+@import '../../globals.css';
+
+div.policy-page {
+    @apply max-w-4xl mx-auto px-6 py-12 space-y-8;
+}
+
+h1.policy-title {
+    @apply text-3xl font-bold text-center mb-4;
+}
+
+p.policy-updated {
+    @apply text-sm text-gray-500 text-center mb-8;
+}
+
+div.policy-sections {
+    @apply space-y-10;
+}
+
+section.policy-section {
+    @apply space-y-2;
+}
+
+h2.policy-section-title {
+    @apply text-xl font-semibold;
+}
+
+p.policy-section-text {
+    @apply text-gray-700 leading-relaxed;
+}

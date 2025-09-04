@@ -1,4 +1,4 @@
-@import '../globals.css';
+@import '../../globals.css';
 
 .contact-page {
     @apply max-w-6xl mx-auto px-6 py-12;
@@ -13,8 +13,20 @@
 }
 
 /* Left column */
-.contact-info h2 {
-    @apply text-xl font-semibold mb-6;
+.contact-info {
+    @apply flex flex-col gap-8;
+}
+
+.contact-heading {
+    @apply flex flex-col gap-2;
+}
+
+.contact-info-title {
+    @apply text-xl font-semibold text-center;
+}
+
+.contact-info-subtitle {
+    @apply text-gray-500 leading-relaxed text-center;
 }
 
 .contact-info ul {
@@ -26,7 +38,11 @@
 }
 
 .contact-info li .icon {
-    @apply text-blue-600 text-xl;
+    @apply text-c4 text-xl;
+}
+
+.contact-info-button {
+    @apply w-full;
 }
 
 /* Right column */

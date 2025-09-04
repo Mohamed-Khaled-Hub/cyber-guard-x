@@ -2,7 +2,10 @@
 
 // Core
 import Image from 'next/image'
+import { motion } from 'framer-motion'
 import { use, useCallback, useEffect, useState } from 'react'
+// Components
+import Button from '@/src/components/UIRelated/Button'
 // Hooks
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
 // Functions
@@ -12,7 +15,6 @@ import { ServiceObject } from '@/src/types/objectsTypes'
 import { ServicesPageParamsType } from '@/src/types/propsTypes'
 // Style
 import '@/src/styles/pages/services/[name]/page.css'
-import Button from '@/src/components/UIRelated/Button'
 
 /* eslint-disable react-hooks/exhaustive-deps */
 export default function Page({ params }: ServicesPageParamsType) {
@@ -26,18 +28,62 @@ export default function Page({ params }: ServicesPageParamsType) {
     const fetchData = useCallback(async () => {
         const res = await getServiceByName(serviceName)
         setService(res)
-    }, [getServiceByName])
+    }, [serviceName, getServiceByName])
 
     useEffect(() => {
         fetchData().then()
     }, [])
 
+    // Page Data
+    const servicePageData = {
+        headings: {
+            whatIs: 'What Is',
+            offers: 'What we can offer ?',
+        },
+        button: {
+            order: 'Order this service',
+        },
+    }
+
+    // Animations
+    const servicePageAnimations = {
+        fadeInUp: {
+            initial: { opacity: 0, y: 40 },
+            whileInView: { opacity: 1, y: 0 },
+            transition: { duration: 0.6 },
+            viewport: { once: true, amount: 0.3 },
+        },
+        staggered: (idx: number) => ({
+            initial: { opacity: 0, y: 40 },
+            whileInView: { opacity: 1, y: 0 },
+            transition: { duration: 0.6, delay: idx * 0.2 },
+            viewport: { once: true, amount: 0.3 },
+        }),
+    }
+
     return (
         <div className='service-page'>
             {service && (
                 <>
-                    <h1 className='service-title'>What Is {service.name}</h1>
-                    <div className='service-info'>
+                    {/* Title */}
+                    <motion.h1
+                        className='service-title'
+                        initial={servicePageAnimations.fadeInUp.initial}
+                        whileInView={servicePageAnimations.fadeInUp.whileInView}
+                        transition={servicePageAnimations.fadeInUp.transition}
+                        viewport={servicePageAnimations.fadeInUp.viewport}
+                    >
+                        {servicePageData.headings.whatIs} {service.name}
+                    </motion.h1>
+
+                    {/* Intro Section */}
+                    <motion.div
+                        className='service-info'
+                        initial={servicePageAnimations.fadeInUp.initial}
+                        whileInView={servicePageAnimations.fadeInUp.whileInView}
+                        transition={servicePageAnimations.fadeInUp.transition}
+                        viewport={servicePageAnimations.fadeInUp.viewport}
+                    >
                         <Image
                             width={500}
                             height={500}
@@ -45,14 +91,28 @@ export default function Page({ params }: ServicesPageParamsType) {
                             alt={service.name + ' image'}
                         />
                         <p>{service.description}</p>
-                    </div>
+                    </motion.div>
+
+                    {/* Extra Info Sections */}
                     {service.extraInfo?.map((info, idx) => (
-                        <div
+                        <motion.div
                             key={`info-${idx}`}
                             className={renderClasses(
                                 'service-info',
                                 idx % 2 === 0 ? 'reversed' : ''
                             )}
+                            initial={
+                                servicePageAnimations.staggered(idx).initial
+                            }
+                            whileInView={
+                                servicePageAnimations.staggered(idx).whileInView
+                            }
+                            transition={
+                                servicePageAnimations.staggered(idx).transition
+                            }
+                            viewport={
+                                servicePageAnimations.staggered(idx).viewport
+                            }
                         >
                             <Image
                                 width={500}
@@ -61,16 +121,39 @@ export default function Page({ params }: ServicesPageParamsType) {
                                 alt={service.name + ' image'}
                             />
                             <p>{info.description}</p>
-                        </div>
+                        </motion.div>
                     ))}
 
-                    <div className='what-we-can-offer'>
-                        <h2>What we can offer ?</h2>
+                    {/* What We Can Offer */}
+                    <motion.div
+                        className='what-we-can-offer'
+                        initial={servicePageAnimations.fadeInUp.initial}
+                        whileInView={servicePageAnimations.fadeInUp.whileInView}
+                        transition={servicePageAnimations.fadeInUp.transition}
+                        viewport={servicePageAnimations.fadeInUp.viewport}
+                    >
+                        <h2>{servicePageData.headings.offers}</h2>
                         <div className='offers-container'>
                             {service.whatWeCanOffer?.map((offer, idx) => (
-                                <div
+                                <motion.div
                                     className='offer'
                                     key={`what-we-can-offer-${idx}`}
+                                    initial={
+                                        servicePageAnimations.staggered(idx)
+                                            .initial
+                                    }
+                                    whileInView={
+                                        servicePageAnimations.staggered(idx)
+                                            .whileInView
+                                    }
+                                    transition={
+                                        servicePageAnimations.staggered(idx)
+                                            .transition
+                                    }
+                                    viewport={
+                                        servicePageAnimations.staggered(idx)
+                                            .viewport
+                                    }
                                 >
                                     <Image
                                         width={200}
@@ -80,14 +163,14 @@ export default function Page({ params }: ServicesPageParamsType) {
                                     />
                                     <h3>{offer.name}</h3>
                                     <p>{offer.description}</p>
-                                </div>
+                                </motion.div>
                             ))}
                         </div>
                         <Button
-                            label={'Order this service'}
+                            label={servicePageData.button.order}
                             variant='service'
                         />
-                    </div>
+                    </motion.div>
                 </>
             )}
         </div>

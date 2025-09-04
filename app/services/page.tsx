@@ -1,13 +1,16 @@
 'use client'
 
 // Core
+import { motion } from 'framer-motion'
 import { useCallback, useEffect, useState } from 'react'
+// Components
+import ServiceCard from '@/src/components/CardsRelated/ServiceCard'
 // Hooks
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
 // Types
 import { ServiceObject } from '@/src/types/objectsTypes'
-// Components
-import ServiceCard from '@/src/components/CardsRelated/ServiceCard'
+// Styles
+import '@/src/styles/pages/services/page.css'
 
 /* eslint-disable react-hooks/exhaustive-deps */
 export default function Page() {
@@ -29,40 +32,88 @@ export default function Page() {
     const cyberServices = services.filter((s) => s.type === 'cyber')
     const softwareServices = services.filter((s) => s.type === 'software')
 
+    // Page Data
+    const servicesPageData = {
+        cyber: { title: 'Our Cyber Security Services' },
+        software: { title: 'Our Software Services' },
+    }
+
+    // Animations
+    const servicesAnimations = {
+        container: {
+            hidden: {},
+            visible: {
+                transition: { staggerChildren: 0.15 },
+            },
+        },
+        card: {
+            hidden: { opacity: 0, y: 40 },
+            visible: {
+                opacity: 1,
+                y: 0,
+                transition: { duration: 0.6 },
+            },
+        },
+    }
+
     return (
-        <div className='space-y-12 mb-16'>
-            {/* Cyber Security */}
-            <section>
-                <h2 className='text-2xl font-semibold mb-6 mt-15 text-center'>
-                    Our Cyber Security Services
+        <div className='services-page'>
+            {/* CyberSecurity */}
+            <section className='services-section'>
+                <h2 className='services-title'>
+                    {servicesPageData.cyber.title}
                 </h2>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                    {cyberServices.map((service, idx) => (
-                        <ServiceCard
-                            key={`cyber-${idx}`}
-                            logo={service.logo}
-                            name={service.name}
-                            description={service.description}
-                        />
-                    ))}
-                </div>
+                {cyberServices.length > 0 && (
+                    <motion.div
+                        className='services-grid'
+                        variants={servicesAnimations.container}
+                        initial='hidden'
+                        whileInView='visible'
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        {cyberServices.map((service, idx) => (
+                            <motion.div
+                                key={`cyber-${idx}`}
+                                variants={servicesAnimations.card}
+                            >
+                                <ServiceCard
+                                    logo={service.logo}
+                                    name={service.name}
+                                    description={service.description}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                )}
             </section>
 
             {/* Software */}
-            <section>
-                <h2 className='text-2xl font-semibold mb-6 mt-4 text-center'>
-                    Our Software Services
+            <section className='services-section'>
+                <h2 className='services-title'>
+                    {servicesPageData.software.title}
                 </h2>
-                <div className='grid grid-cols-1 md:grid-cols-3 gap-6'>
-                    {softwareServices.map((service, idx) => (
-                        <ServiceCard
-                            key={`software-${idx}`}
-                            logo={service.logo}
-                            name={service.name}
-                            description={service.description}
-                        />
-                    ))}
-                </div>
+                {softwareServices.length > 0 && (
+                    <motion.div
+                        className='services-grid'
+                        variants={servicesAnimations.container}
+                        initial='hidden'
+                        whileInView='visible'
+                        viewport={{ once: true, amount: 0.2 }}
+                    >
+                        {softwareServices.map((service, idx) => (
+                            <motion.div
+                                key={`software-${idx}`}
+                                variants={servicesAnimations.card}
+                            >
+                                <ServiceCard
+                                    logo={service.logo}
+                                    name={service.name}
+                                    description={service.description}
+                                />
+                            </motion.div>
+                        ))}
+                    </motion.div>
+                )}
             </section>
         </div>
     )
