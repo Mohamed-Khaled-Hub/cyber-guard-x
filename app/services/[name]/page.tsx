@@ -9,8 +9,9 @@ import Loader from '@/src/components/UIRelated/Loader'
 import Button from '@/src/components/UIRelated/Button'
 // Hooks
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
+import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 // Functions
-import { renderClasses } from '@/src/utils/Functions'
+import { renderClasses, setMetadata } from '@/src/utils/Functions'
 // Types
 import { ServiceObject } from '@/src/types/objectsTypes'
 import { ServicesPageParamsType } from '@/src/types/propsTypes'
@@ -18,11 +19,12 @@ import { ServicesPageParamsType } from '@/src/types/propsTypes'
 import '@/src/styles/pages/services/[name]/page.css'
 
 /* eslint-disable react-hooks/exhaustive-deps */
-export default function Page({ params }: ServicesPageParamsType) {
+export default function ServiceByNamePage({ params }: ServicesPageParamsType) {
     // Get NAME /services/:name
     const { name: serviceName } = use(params)
     // Contexts
     const { getServiceByName } = useCompanyData()
+    const { name } = useWebsiteInfo()
     // States
     const [service, setService] = useState<ServiceObject | null>(null)
 
@@ -34,6 +36,19 @@ export default function Page({ params }: ServicesPageParamsType) {
     useEffect(() => {
         fetchData().then()
     }, [])
+
+    useEffect(() => {
+        if (service) {
+            setMetadata(`${service.name} | ${name}`, service.description, [
+                service.name,
+                `${service.name} service`,
+                `${name.toLowerCase()} ${service.name}`,
+                'cybersecurity',
+                'software development',
+                'IT consulting',
+            ])
+        }
+    }, [service, name])
 
     // Show loader while fetching
     if (service === null) {

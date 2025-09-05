@@ -13,7 +13,7 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
     return (
         <WebsiteInfoContext.Provider
             value={{
-                name: 'CyberGuard X',
+                name: 'CyberGuardX',
                 desc: 'CyberGuardX was established to deliver comprehensive solutions in software development and cybersecurity, tailored to meet the evolving needs of businesses and individuals across Egypt and the Arab region.',
                 slogan: 'Integrated Solutions LLC',
                 logoUrl: '/assets/logo/logo.svg',

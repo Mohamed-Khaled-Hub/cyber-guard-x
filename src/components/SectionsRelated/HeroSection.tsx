@@ -9,17 +9,30 @@ export default function HeroSection() {
     const { name, fullLogoUrl } = useWebsiteInfo()
 
     return (
-        <section
-            className='hero-section'
-            style={{
-                backgroundImage: `url(/assets/images/background-pattern.png)`,
-            }}
-        >
+        <section className='hero-section'>
+            <div className='hero-background'>
+                {/* Image Case */}
+                {/*<Image*/}
+                {/*    src={'/assets/images/background-pattern.png'}*/}
+                {/*    alt={'CyberGuard Pattern'}*/}
+                {/*    fill*/}
+                {/*/>*/}
+                {/* Video Case */}
+                <video
+                    src='/assets/videos/background.mp4'
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                />
+                <div className='overlay'></div>
+            </div>
             <Image
                 width={400}
                 height={400}
                 src={fullLogoUrl}
                 alt={name + ' logo'}
+                className='hero-logo'
             />
         </section>
     )

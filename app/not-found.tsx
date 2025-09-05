@@ -1,13 +1,30 @@
 'use client'
 
+// Core
+import { useEffect } from 'react'
 import { usePathname } from 'next/navigation'
 // Components
 import Button from '@/src/components/UIRelated/Button'
+// Functions
+import { setMetadata } from '@/src/utils/Functions'
+// Hooks
+import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 // Styles
 import '@/src/styles/pages/not-found.css'
 
+/* eslint-disable react-hooks/exhaustive-deps */
 export default function NotFoundPage() {
+    // Contexts
     const pathname = usePathname()
+    const { name } = useWebsiteInfo()
+
+    useEffect(() => {
+        setMetadata(
+            `404 | ${name}`,
+            'This page could not be found. Please check the URL or return to the homepage.',
+            ['404 error', 'page not found', `${name} 404`, 'missing page']
+        )
+    }, [])
 
     const notFoundData = {
         title: 'Page Not Found',

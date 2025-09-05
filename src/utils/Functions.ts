@@ -7,7 +7,11 @@ export function capitalizeWords(text: string): string {
 }
 
 // Setting <title> & <meta name='description' />
-export function setTitleAndDesc(title: string, desc: string): void {
+export function setMetadata(
+    title: string,
+    desc: string,
+    keywords: string[]
+): void {
     if (typeof document !== 'undefined') {
         document.title = title
 
@@ -22,6 +26,17 @@ export function setTitleAndDesc(title: string, desc: string): void {
         }
 
         metaDesc.content = desc
+
+        // --- Keywords ---
+        let metaKeywords = document.querySelector<HTMLMetaElement>(
+            'meta[name="keywords"]'
+        )
+        if (!metaKeywords) {
+            metaKeywords = document.createElement('meta')
+            metaKeywords.name = 'keywords'
+            document.head.appendChild(metaKeywords)
+        }
+        metaKeywords.content = keywords.join(', ')
     }
 }
 
