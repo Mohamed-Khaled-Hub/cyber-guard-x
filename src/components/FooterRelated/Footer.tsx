@@ -4,8 +4,6 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { LuMapPin } from 'react-icons/lu'
-import { FaLinkedin } from 'react-icons/fa6'
-import { FaFacebook, FaInstagram } from 'react-icons/fa'
 import { useCallback, useEffect, useState } from 'react'
 import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 // Components
@@ -57,12 +55,14 @@ export default function Footer() {
                         variant='secondary'
                         href='/contact-us'
                         label='Contact Us'
+                        className='min-w-40'
                     />
                     <Button
                         variant='primary'
                         href='https://calendly.com/youssefarag3/30min'
                         target='_blank'
                         label='Schedule a call'
+                        className='min-w-40'
                     />
                 </div>
             </div>
@@ -81,13 +81,20 @@ export default function Footer() {
                                     height={80}
                                 />
                                 <ul>
-                                    {socials.facebook && (
+                                    {socials.linkedIn && (
                                         <li>
                                             <Link
-                                                href={socials.facebook}
+                                                href={socials.linkedIn}
                                                 target='_blank'
                                             >
-                                                <FaFacebook />
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={
+                                                        '/assets/social/linkedin.svg'
+                                                    }
+                                                    alt={'LinkedIn'}
+                                                />
                                             </Link>
                                         </li>
                                     )}
@@ -97,17 +104,31 @@ export default function Footer() {
                                                 href={socials.instagram}
                                                 target='_blank'
                                             >
-                                                <FaInstagram />
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={
+                                                        '/assets/social/instagram.svg'
+                                                    }
+                                                    alt={'Instagram'}
+                                                />
                                             </Link>
                                         </li>
                                     )}
-                                    {socials.linkedIn && (
+                                    {socials.facebook && (
                                         <li>
                                             <Link
-                                                href={socials.linkedIn}
+                                                href={socials.facebook}
                                                 target='_blank'
                                             >
-                                                <FaLinkedin />
+                                                <Image
+                                                    width={20}
+                                                    height={20}
+                                                    src={
+                                                        '/assets/social/facebook.svg'
+                                                    }
+                                                    alt={'Facebook'}
+                                                />
                                             </Link>
                                         </li>
                                     )}

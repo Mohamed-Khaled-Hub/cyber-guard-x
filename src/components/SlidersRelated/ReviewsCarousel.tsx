@@ -9,6 +9,7 @@ import ReviewCard from '@/src/components/CardsRelated/ReviewCard'
 import { ReviewsCarouselProps } from '@/src/types/propsTypes'
 // Style
 import '@/src/styles/components/SlidersRelated/ReviewsCarousel.css'
+import { renderClasses } from '@/src/utils/Functions'
 
 function useSlidesPerView() {
     const [spv, setSpv] = useState(1)
@@ -114,15 +115,25 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                     style={{ transform: `translateX(${translatePct}%)` }}
                     onTransitionEnd={handleTransitionEnd}
                 >
-                    {extended.map((r, i) => (
-                        <div className='review-slide' key={`review-${i}`}>
-                            <ReviewCard
-                                imgSrc={r.imgSrc}
-                                name={r.name}
-                                review={r.review}
-                            />
-                        </div>
-                    ))}
+                    {extended.map((r, i) => {
+                        return (
+                            <div
+                                className={renderClasses(
+                                    'review-slide transition-transform duration-500',
+                                    Math.abs(i - index) === 1
+                                        ? 'scale-110 z-10'
+                                        : 'scale-90 opacity-80'
+                                )}
+                                key={`review-${i}`}
+                            >
+                                <ReviewCard
+                                    imgSrc={r.imgSrc}
+                                    name={r.name}
+                                    review={r.review}
+                                />
+                            </div>
+                        )
+                    })}
                 </div>
             </div>
 

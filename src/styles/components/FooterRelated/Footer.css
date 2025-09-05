@@ -78,12 +78,13 @@ div.footer-socials li {
 }
 
 div.footer-socials li * {
-    @apply w-full h-full text-c5 duration-200;
+    @apply w-full h-full duration-200;
+    /*@apply text-c5;*/
 }
 
-div.footer-socials li:hover * {
-    @apply text-c6;
-}
+/*div.footer-socials li:hover * {*/
+/*    @apply text-c6;*/
+/*}*/
 
 div.footer-contact li {
     @apply flex gap-2;

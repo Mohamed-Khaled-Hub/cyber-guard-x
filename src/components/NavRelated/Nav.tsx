@@ -52,23 +52,20 @@ export default function Nav() {
                                             src='/assets/logo/full-logo.svg'
                                             alt={`${name} full logo`}
                                             width={140}
-                                            height={50}
+                                            height={40}
                                             priority
                                         />
                                     </motion.div>
                                 ) : (
                                     <motion.div
                                         key='small-logo'
-                                        initial={{ opacity: 0, scale: 0.9 }}
-                                        animate={{ opacity: 1, scale: 1 }}
-                                        exit={{ opacity: 0, scale: 0.9 }}
-                                        transition={{ duration: 0.3 }}
+                                        {...logoAnimations}
                                     >
                                         <Image
                                             src={logoUrl}
                                             alt={`${name} logo`}
-                                            width={50}
-                                            height={50}
+                                            width={40}
+                                            height={40}
                                             priority
                                         />
                                     </motion.div>

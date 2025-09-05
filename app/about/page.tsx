@@ -104,7 +104,7 @@ We empower organizations through smart applications, advanced systems, and high-
             <AnimatedSection>
                 <section className='who-we-are'>
                     <motion.div
-                        className='who-we-are-img'
+                        className='who-we-are-img not-md:-mr-12'
                         {...animations.whoWeAreImg}
                     >
                         <Image

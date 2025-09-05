@@ -21,7 +21,7 @@ div.reviews-track.no-transition {
 
 /* Slide */
 div.review-slide {
-    @apply h-auto mt-14 px-3 box-border;
+    @apply h-auto mt-20 mb-10 px-3 box-border;
     flex: 0 0 calc(100% / var(--spv));
 }
 
