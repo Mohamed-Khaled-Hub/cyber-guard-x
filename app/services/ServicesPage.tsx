@@ -17,8 +17,8 @@ import '@/src/styles/pages/services/page.css'
 /* eslint-disable react-hooks/exhaustive-deps */
 export default function ServicesPage() {
     // Contexts
-    const { getServices } = useCompanyData()
     const searchParams = useSearchParams()
+    const { getServices } = useCompanyData()
 
     // States
     const [services, setServices] = useState<ServiceObject[] | null>(null)
