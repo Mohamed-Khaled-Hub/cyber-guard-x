@@ -121,8 +121,8 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                                 className={renderClasses(
                                     'review-slide transition-transform duration-500',
                                     Math.abs(i - index) === 1
-                                        ? 'not-sm:scale-110'
-                                        : 'not-sm:scale-90 not-sm:opacity-80'
+                                        ? 'lg:scale-110'
+                                        : 'lg:scale-90 lg:opacity-80'
                                 )}
                                 key={`review-${i}`}
                             >
