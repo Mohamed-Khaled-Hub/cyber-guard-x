@@ -21,7 +21,9 @@ export default function Page() {
         subtitle: 'One of our experts will be in contact with you shortly',
         button: {
             label: 'Schedule a Call',
-            href: 'https://calendly.com/youssefarag3/30min',
+            href:
+                process.env.NEXT_PUBLIC_CALENDLY_LINK ||
+                'https://www.google.com',
         },
     }
 
