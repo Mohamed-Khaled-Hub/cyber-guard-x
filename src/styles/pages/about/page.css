@@ -5,15 +5,22 @@ div.about-page {
 
     /* Who Are We */
     section.who-we-are {
-        @apply grid grid-cols-1 md:grid-cols-2 gap-8 items-center;
+        @apply grid grid-cols-1 md:grid-cols-2 gap-8 items-center relative;
     }
 
     div.who-we-are-img {
-        @apply relative w-full h-80 md:h-[400px] rounded-xl shadow-lg overflow-hidden;
+        @apply relative w-full aspect-[16/10] md:aspect-[16/9] rounded-xl shadow-lg overflow-hidden z-10;
     }
 
     div.who-we-are-text {
-        @apply bg-gradient-to-r from-c5 to-c4 text-white p-8 rounded-xl shadow-lg;
+        @apply bg-gradient-to-r from-c5 to-c4 text-white p-8 rounded-xl shadow-lg relative z-0;
+        margin-left: -3rem;
+    }
+
+    @media (max-width: 768px) {
+        div.who-we-are-text {
+            margin-left: 0;
+        }
     }
 
     div.who-we-are-text h2 {

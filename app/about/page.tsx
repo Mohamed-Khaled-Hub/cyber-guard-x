@@ -48,9 +48,19 @@ export default function Page() {
     const aboutPageData = {
         whoWeAre: {
             title: 'Who Are We ?',
-            description: `CyberGuardX was established to deliver comprehensive solutions in software development and cybersecurity, tailored to meet the evolving needs of businesses and individuals across Egypt and the Arab region.
-        
-We empower organizations through smart applications, advanced systems, and high-level cybersecurity services that ensure digital transformation with confidence and safety.`,
+            description: (
+                <>
+                    CyberGuardX was established to deliver comprehensive
+                    solutions in software development and cybersecurity,
+                    tailored to meet the evolving needs of businesses and
+                    individuals across Egypt and the Arab region.
+                    <br />
+                    <br />
+                    We empower organizations through smart applications,
+                    advanced systems, and high-level cybersecurity services that
+                    ensure digital transformation with confidence and safety.
+                </>
+            ),
             image: {
                 src: '/assets/images/who-we-are.svg',
                 alt: 'Team meeting',
@@ -104,7 +114,7 @@ We empower organizations through smart applications, advanced systems, and high-
             <AnimatedSection>
                 <section className='who-we-are'>
                     <motion.div
-                        className='who-we-are-img not-md:-mr-12'
+                        className='who-we-are-img'
                         {...animations.whoWeAreImg}
                     >
                         <Image

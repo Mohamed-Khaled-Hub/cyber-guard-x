@@ -8,7 +8,7 @@ div.loader-backdrop {
 
 /* Container */
 div.loader {
-    @apply relative w-1/4 aspect-square flex items-center justify-center;
+    @apply relative w-1/4 not-md:w-1/2 aspect-square flex items-center justify-center;
 }
 
 /* Lottie animation */
