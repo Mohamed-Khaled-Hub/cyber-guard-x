@@ -81,11 +81,11 @@ export default function Nav() {
                 Network Penetration Testing
             </Link>
             <Link
-                href='/services/web-application-development'
+                href='/services/web-penetration-testing'
                 className={isMobile ? 'mobile-link' : 'service-item'}
                 onClick={() => isMobile && setMenuOpen(false)}
             >
-                Web Application Development
+                Web Penetration Testing
             </Link>
         </>
     )
@@ -97,9 +97,9 @@ export default function Nav() {
                 .filter(
                     (s) =>
                         ![
+                            'Web Penetration Testing',
                             'Mobile Penetration Testing',
                             'Network Penetration Testing',
-                            'Web Application Development',
                         ].includes(s.name)
                 )
                 .slice(0, 4)

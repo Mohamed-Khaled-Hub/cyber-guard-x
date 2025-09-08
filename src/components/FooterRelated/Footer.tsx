@@ -4,6 +4,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { LuMapPin } from 'react-icons/lu'
+import { FiChevronDown } from 'react-icons/fi'
 import { useCallback, useEffect, useState } from 'react'
 import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 // Components
@@ -25,6 +26,7 @@ export default function Footer() {
     const { getServices } = useCompanyData()
     const { name, logoUrl, contact, socials, pages } = useWebsiteInfo()
     // States
+    const [openPentest, setOpenPentest] = useState(false)
     const [services, setServices] = useState<ServiceObject[]>([])
 
     const fetchData = useCallback(async () => {
@@ -35,6 +37,18 @@ export default function Footer() {
     useEffect(() => {
         fetchData().then()
     }, [])
+
+    const pentestServices = services.filter((s) =>
+        [
+            'Web Penetration Testing',
+            'Mobile Penetration Testing',
+            'Network Penetration Testing',
+        ].includes(s.name)
+    )
+
+    const otherServices = services
+        .filter((s) => !pentestServices.includes(s))
+        .slice(0, 4)
 
     return (
         <>
@@ -135,32 +149,62 @@ export default function Footer() {
                         )}
 
                         {/* Left Column - Pages */}
-                        {services && services.length > 0 && (
+                        {services.length > 0 && (
                             <div className='footer-pages order-2 md:order-1'>
                                 <h3>Services</h3>
                                 <ul>
-                                    {services
-                                        .sort(
-                                            (a, b) =>
-                                                b.name.length - a.name.length
-                                        ) // longest first
-                                        .slice(0, 5) // only 5
-                                        .sort(
-                                            (a, b) =>
-                                                a.name.length - b.name.length
-                                        ) // reorder shortest-first among top 5
-                                        .map((service, idx) => (
-                                            <li key={`service-${idx}`}>
-                                                <Link
-                                                    href={`/services/${toKebabCase(
-                                                        service.name
-                                                    )}`}
-                                                >
-                                                    {service.name}
-                                                </Link>
-                                            </li>
-                                        ))}
+                                    {/* Pentesting collapsible */}
+                                    <li>
+                                        <button
+                                            className='footer-dropdown-btn'
+                                            onClick={() =>
+                                                setOpenPentest(!openPentest)
+                                            }
+                                        >
+                                            <span>Penetration Testing</span>
+                                            <FiChevronDown
+                                                className={`footer-dropdown-arrow ${
+                                                    openPentest
+                                                        ? 'rotate-180'
+                                                        : ''
+                                                }`}
+                                            />
+                                        </button>
+                                        {openPentest && (
+                                            <ul className='footer-submenu'>
+                                                {pentestServices.map(
+                                                    (service, idx) => (
+                                                        <li
+                                                            key={`pentest-${idx}`}
+                                                        >
+                                                            <Link
+                                                                href={`/services/${toKebabCase(
+                                                                    service.name
+                                                                )}`}
+                                                            >
+                                                                {service.name}
+                                                            </Link>
+                                                        </li>
+                                                    )
+                                                )}
+                                            </ul>
+                                        )}
+                                    </li>
+
+                                    {/* Other services */}
+                                    {otherServices.map((service, idx) => (
+                                        <li key={`service-${idx}`}>
+                                            <Link
+                                                href={`/services/${toKebabCase(
+                                                    service.name
+                                                )}`}
+                                            >
+                                                {service.name}
+                                            </Link>
+                                        </li>
+                                    ))}
                                 </ul>
+
                                 <div className='mt-2'>
                                     <Link
                                         href={
