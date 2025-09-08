@@ -13,7 +13,7 @@
 
     /* Left column */
     .contact-info {
-        @apply relative flex flex-col gap-6 h-full;
+        @apply relative flex flex-col gap-12 h-full;
     }
 
     .contact-heading {
@@ -29,7 +29,7 @@
     }
 
     .contact-info ul {
-        @apply space-y-4;
+        @apply space-y-6;
     }
 
     .contact-info li {
@@ -41,7 +41,7 @@
     }
 
     .contact-info-button {
-        @apply md:absolute w-full md:bottom-6;
+        @apply absolute inset-x-0 bottom-4 md:bottom-6 w-full z-20;
     }
 
     /* Right column */

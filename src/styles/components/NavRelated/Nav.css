@@ -15,11 +15,13 @@ ul.nav-list {
 }
 
 li.nav-item {
-    @apply list-none;
+    @apply list-none relative;
 }
 
-a.nav-link {
+a.nav-link,
+button.nav-link {
     @apply text-neutral-400 font-medium transition-colors duration-200 hover:text-white;
+    @apply bg-transparent border-none cursor-pointer;
 }
 
 /* Actions */
@@ -40,6 +42,29 @@ ul.mobile-list {
     @apply flex flex-col gap-4 p-6;
 }
 
-a.mobile-link {
-    @apply text-neutral-300 font-medium hover:text-white transition-colors duration-200;
+.mobile-link {
+    @apply flex justify-between items-center text-neutral-300 font-medium hover:text-white transition-colors duration-200;
+}
+
+/* Services dropdown */
+.services-dropdown {
+    @apply absolute top-full left-0 mt-2 bg-c1 shadow-lg rounded-lg p-2
+    flex flex-col w-64 z-50;
+}
+
+/* Each item */
+.service-item {
+    @apply px-4 py-2 text-neutral-300 font-medium hover:text-white
+    transition-colors duration-200 cursor-pointer rounded-md;
+}
+
+/* Group */
+.service-group {
+    @apply relative;
+}
+
+/* Submenu aligned LEFT */
+.submenu-left {
+    @apply absolute top-0 right-full mr-2 bg-c1 shadow-lg rounded-lg py-2
+    flex flex-col w-64 z-50;
 }

@@ -43,7 +43,13 @@ export default function PartnersSlider({
                     }}
                 >
                     {logos.map((logo, idx) => (
-                        <div className='partner-logo' key={`partner-${idx}`}>
+                        <div
+                            className='partner-logo'
+                            key={`partner-${idx}`}
+                            style={{
+                                flex: `0 0 ${100 / visibleCount}%`,
+                            }}
+                        >
                             <Image
                                 width={120}
                                 height={60}

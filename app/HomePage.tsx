@@ -4,6 +4,7 @@
 import Link from 'next/link'
 import Image from 'next/image'
 import { motion } from 'framer-motion'
+import { useState, useEffect } from 'react'
 // Components
 import Button from '@/src/components/UIRelated/Button'
 import Counter from '@/src/components/UIRelated/Counter'
@@ -14,6 +15,22 @@ import AnimatedSection from '@/src/components/ContainersRelated/AnimatedSection'
 import '@/src/styles/pages/page.css'
 
 export default function HomePage() {
+    const [visibleCount, setVisibleCount] = useState(3)
+
+    useEffect(() => {
+        const handleResize = () => {
+            if (window.innerWidth >= 1024) {
+                setVisibleCount(5)
+            } else {
+                setVisibleCount(3)
+            }
+        }
+
+        handleResize()
+        window.addEventListener('resize', handleResize)
+        return () => window.removeEventListener('resize', handleResize)
+    }, [])
+
     // Page Data
     const homePageData = {
         whoWeAre: {
@@ -56,8 +73,11 @@ export default function HomePage() {
                 '/assets/images/partners/nti.svg',
                 '/assets/images/partners/pua.svg',
                 '/assets/images/partners/sn.svg',
+                '/assets/images/partners/qnb.svg',
+                '/assets/images/partners/credit.svg',
+                '/assets/images/partners/itc.svg',
+                '/assets/images/partners/egbank.svg',
             ],
-            visibleCount: 3,
         },
         ourServices: {
             title: 'Our Services',
@@ -172,7 +192,7 @@ export default function HomePage() {
                     </motion.h2>
                     <PartnersSlider
                         logos={homePageData.ourPartners.logos}
-                        visibleCount={homePageData.ourPartners.visibleCount}
+                        visibleCount={visibleCount}
                     />
                 </section>
             </AnimatedSection>

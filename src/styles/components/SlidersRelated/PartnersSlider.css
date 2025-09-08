@@ -26,7 +26,7 @@ div.partners-track {
 
 /* Single logo */
 div.partner-logo {
-    @apply flex justify-center items-center flex-shrink-0 w-1/3;
+    @apply flex justify-center items-center flex-shrink-0;
 }
 
 div.partner-logo img {
