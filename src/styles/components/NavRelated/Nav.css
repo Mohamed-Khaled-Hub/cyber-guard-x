@@ -68,3 +68,7 @@ ul.mobile-list {
     @apply absolute top-0 right-full mr-2 bg-c1 shadow-lg rounded-lg py-2
     flex flex-col w-64 z-50;
 }
+
+.dropdown-arrow {
+    @apply ml-2 font-bold transition-transform duration-200;
+}

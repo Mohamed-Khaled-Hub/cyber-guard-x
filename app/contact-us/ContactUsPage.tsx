@@ -1,8 +1,8 @@
 'use client'
 
 // Core
-import { motion } from 'framer-motion'
 import { LuMapPin } from 'react-icons/lu'
+import { motion, easeOut } from 'framer-motion'
 import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 // Hooks
 import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
@@ -45,7 +45,13 @@ export default function ContactUsPage() {
             transition: { duration: 0.5, delay: i * 0.1 },
         }),
         contactButton: {
-            transition: { duration: 0.6, delay: 0.4 },
+            initial: 'hidden',
+            animate: 'visible',
+            variants: {
+                hidden: { opacity: 0, y: 20 },
+                visible: { opacity: 1, y: 0 },
+            },
+            transition: { duration: 0.6, delay: 0.4, ease: easeOut },
         },
         contactForm: {
             transition: { duration: 0.6, delay: 0.2 },
@@ -110,8 +116,8 @@ export default function ContactUsPage() {
                         ))}
                     </ul>
                     <motion.div
-                        {...animations.fadeInUpBase}
-                        transition={animations.contactButton.transition}
+                        {...animations.contactButton}
+                        className='contact-info-button-wrapper'
                     >
                         <Button
                             type='submit'

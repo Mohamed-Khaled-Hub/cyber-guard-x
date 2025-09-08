@@ -5,7 +5,7 @@ import Link from 'next/link'
 import Image from 'next/image'
 import { useEffect, useState } from 'react'
 import { motion, AnimatePresence } from 'framer-motion'
-import { FiMenu, FiX, FiChevronRight, FiChevronDown } from 'react-icons/fi'
+import { FiMenu, FiX, FiChevronRight } from 'react-icons/fi'
 // Components
 import Button from '@/src/components/UIRelated/Button'
 import Container from '@/src/components/ContainersRelated/Container'
@@ -16,6 +16,7 @@ import { useCompanyData } from '@/src/providers/CompanyDataProvider'
 import { ServiceObject } from '@/src/types/objectsTypes'
 // Style
 import '@/src/styles/components/NavRelated/Nav.css'
+import { renderClasses } from '@/src/utils/Functions'
 
 export default function Nav() {
     // Contexts
@@ -56,12 +57,11 @@ export default function Nav() {
         transition: { duration: 0.2 },
     }
 
-    const Arrow = ({ open }: { open: boolean }) =>
-        open ? (
-            <FiChevronDown className='ml-2 transition-transform' />
-        ) : (
-            <FiChevronRight className='ml-2 transition-transform' />
-        )
+    const Arrow = ({ open }: { open: boolean }) => (
+        <FiChevronRight
+            className={renderClasses('dropdown-arrow', open ? 'rotate-90' : '')}
+        />
+    )
 
     // Shared render for Penetration Testing submenu
     const renderPenTestingLinks = (isMobile = false) => (

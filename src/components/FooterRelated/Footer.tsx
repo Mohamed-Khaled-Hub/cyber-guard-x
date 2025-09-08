@@ -11,7 +11,7 @@ import { MdOutlineMail, MdOutlinePhone } from 'react-icons/md'
 import Button from '@/src/components/UIRelated/Button'
 import Container from '@/src/components/ContainersRelated/Container'
 // Functions
-import { toKebabCase } from '@/src/utils/Functions'
+import { renderClasses, toKebabCase } from '@/src/utils/Functions'
 // Hooks
 import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
@@ -163,11 +163,12 @@ export default function Footer() {
                                         >
                                             <span>Penetration Testing</span>
                                             <FiChevronDown
-                                                className={`footer-dropdown-arrow ${
+                                                className={renderClasses(
+                                                    'footer-dropdown-arrow',
                                                     openPentest
                                                         ? 'rotate-180'
                                                         : ''
-                                                }`}
+                                                )}
                                             />
                                         </button>
                                         {openPentest && (

@@ -40,8 +40,12 @@
         @apply text-c4 text-xl;
     }
 
+    .contact-info-button-wrapper {
+        @apply md:absolute inset-x-0 bottom-4 md:bottom-6 flex justify-center;
+    }
+
     .contact-info-button {
-        @apply absolute inset-x-0 bottom-4 md:bottom-6 w-full z-20;
+        @apply w-full;
     }
 
     /* Right column */

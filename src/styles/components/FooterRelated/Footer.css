@@ -95,14 +95,14 @@ div.footer-bottom {
 }
 
 .footer-dropdown-btn {
-    @apply flex items-center cursor-pointer justify-between w-full
+    @apply flex items-center cursor-pointer w-full
     text-left text-neutral-300 hover:text-white transition;
 }
 
 .footer-dropdown-arrow {
-    @apply ml-2 transition-transform duration-200;
+    @apply ml-2 font-bold transition-transform duration-200;
 }
 
 .footer-submenu {
-    @apply mt-2 ml-4 space-y-2;
+    @apply mt-2 ml-6 space-y-2;
 }
