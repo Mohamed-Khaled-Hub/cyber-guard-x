@@ -19,13 +19,15 @@ export default function Counter({ endNumber, numberFor }: CounterProps) {
             <div className='counter-number'>
                 {inView ? (
                     <div>
-                        <CountUp start={0} end={endNumber} duration={2} />
-                        <span>+</span>
+                        <span className='font-bold'>
+                            <CountUp start={0} end={endNumber} duration={2} />
+                        </span>
+                        <span className='font-bold'>+</span>
                     </div>
                 ) : (
                     <div>
-                        <span>0</span>
-                        <span>+</span>
+                        <span className='font-bold'>0</span>
+                        <span className='font-bold'>+</span>
                     </div>
                 )}
             </div>
