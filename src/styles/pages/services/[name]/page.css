@@ -16,7 +16,7 @@ div.service-page {
     }
 
     div.service-info img {
-        @apply w-full md:w-1/2 rounded-lg;
+        @apply w-full h-auto md:w-1/2 rounded-lg;
     }
 
     div.service-info p {
