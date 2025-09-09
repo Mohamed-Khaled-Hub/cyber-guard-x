@@ -35,7 +35,7 @@ div.home-page {
     }
 
     section.why-choose-us div.why-choose-us-cards {
-        @apply w-fit grid grid-cols-1 md:grid-cols-3 gap-4;
+        @apply w-fit md:w-4/5 grid grid-cols-1 md:grid-cols-3 gap-4;
     }
 
     /* Our Partners */

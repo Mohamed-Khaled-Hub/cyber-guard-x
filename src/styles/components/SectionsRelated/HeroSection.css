@@ -18,6 +18,5 @@ section.hero-section div.hero-background img {
 
 section.hero-section div.hero-background div.overlay {
     @apply absolute top-0 left-0 w-full h-full;
-    /*@apply bg-c1/20 backdrop-blur-xs; !* Image Case *!*/
-    @apply bg-c1/20 backdrop-blur-sm; /* Video Case */
+    @apply bg-c1/20 backdrop-blur-sm;
 }

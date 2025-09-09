@@ -11,12 +11,6 @@ export default function HeroSection() {
     return (
         <section className='hero-section'>
             <div className='hero-background'>
-                {/* Image Case */}
-                {/*<Image*/}
-                {/*    src={'/assets/images/background-pattern.png'}*/}
-                {/*    alt={'CyberGuard Pattern'}*/}
-                {/*    fill*/}
-                {/*/>*/}
                 {/* Video Case */}
                 <video
                     src='/assets/videos/background.mp4'
@@ -28,8 +22,8 @@ export default function HeroSection() {
                 <div className='overlay'></div>
             </div>
             <Image
-                width={400}
-                height={400}
+                width={550}
+                height={550}
                 src={fullLogoUrl}
                 alt={name + ' logo'}
                 className='hero-logo'

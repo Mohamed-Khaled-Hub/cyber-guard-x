@@ -232,6 +232,7 @@ export default function HomePage() {
                             label={homePageData.ourServices.button.label}
                             href={homePageData.ourServices.button.href}
                             variant='service'
+                            className='bigger'
                         />
                     </motion.div>
                 </section>

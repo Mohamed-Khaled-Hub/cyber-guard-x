@@ -9,6 +9,8 @@ import { FiMenu, FiX, FiChevronRight } from 'react-icons/fi'
 // Components
 import Button from '@/src/components/UIRelated/Button'
 import Container from '@/src/components/ContainersRelated/Container'
+// Functions
+import { renderClasses } from '@/src/utils/Functions'
 // Hooks
 import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 import { useCompanyData } from '@/src/providers/CompanyDataProvider'
@@ -16,13 +18,11 @@ import { useCompanyData } from '@/src/providers/CompanyDataProvider'
 import { ServiceObject } from '@/src/types/objectsTypes'
 // Style
 import '@/src/styles/components/NavRelated/Nav.css'
-import { renderClasses } from '@/src/utils/Functions'
 
 export default function Nav() {
     // Contexts
     const { name, pages, logoUrl } = useWebsiteInfo()
     const { getServices } = useCompanyData()
-
     // States
     const [scrolled, setScrolled] = useState(false)
     const [menuOpen, setMenuOpen] = useState(false)

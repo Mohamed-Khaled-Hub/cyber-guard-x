@@ -69,12 +69,14 @@ export default function Footer() {
                         variant='secondary'
                         href='/contact-us'
                         label='Contact Us'
+                        className='md:min-w-36'
                     />
                     <Button
                         variant='primary'
                         href='https://calendly.com/youssefarag3/30min'
                         target='_blank'
                         label='Schedule a call'
+                        className='md:min-w-36'
                     />
                 </div>
             </div>
