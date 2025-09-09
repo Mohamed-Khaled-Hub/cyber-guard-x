@@ -63,7 +63,7 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
             )
         } else if (index < clones) {
             setTransitionEnabled(false)
-            setIndex(baseLen + clones - 1)
+            setIndex(index + baseLen)
             requestAnimationFrame(() =>
                 requestAnimationFrame(() => setTransitionEnabled(true))
             )
@@ -116,11 +116,14 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                     onTransitionEnd={handleTransitionEnd}
                 >
                     {extended.map((r, i) => {
+                        const isCenterSlide =
+                            i === index + Math.floor(slidesPerView / 2)
                         return (
                             <div
                                 className={renderClasses(
                                     'review-slide transition-transform duration-500',
-                                    i === index + Math.floor(slidesPerView / 2)
+                                    !transitionEnabled ? 'transition-none' : '',
+                                    isCenterSlide
                                         ? 'scale-110'
                                         : 'scale-90 opacity-80'
                                 )}
