@@ -107,12 +107,10 @@ export default function ServiceByNamePage({ params }: ServicesPageParamsType) {
                         viewport={servicePageAnimations.fadeInUp.viewport}
                     >
                         <Image
-                            width={600}
-                            height={400}
+                            width={500}
+                            height={500}
                             src={service.imgSrc}
                             alt={service.name + ' image'}
-                            placeholder='blur'
-                            blurDataURL='/assets/images/placeholder.jpg'
                         />
                         <p>{service.description}</p>
                     </motion.div>
@@ -139,12 +137,10 @@ export default function ServiceByNamePage({ params }: ServicesPageParamsType) {
                             }
                         >
                             <Image
-                                width={600}
-                                height={400}
+                                width={500}
+                                height={500}
                                 src={info.imgSrc}
                                 alt={service.name + ' image'}
-                                placeholder='blur'
-                                blurDataURL='/assets/images/placeholder.jpg'
                             />
                             <p>{info.description}</p>
                         </motion.div>
@@ -186,8 +182,6 @@ export default function ServiceByNamePage({ params }: ServicesPageParamsType) {
                                         height={200}
                                         src={offer.imgSrc}
                                         alt={offer.name + ' image'}
-                                        placeholder='blur'
-                                        blurDataURL='/assets/images/placeholder.jpg'
                                     />
                                     <h3>{offer.name}</h3>
                                     <p>{offer.description}</p>
