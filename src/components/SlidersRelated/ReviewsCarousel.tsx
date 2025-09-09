@@ -124,8 +124,8 @@ export default function ReviewsCarousel({ reviews }: ReviewsCarouselProps) {
                                     'review-slide transition-transform duration-500',
                                     !transitionEnabled ? 'transition-none' : '',
                                     isCenterSlide
-                                        ? 'scale-110'
-                                        : 'scale-90 opacity-80'
+                                        ? 'lg:scale-110'
+                                        : 'lg:scale-90 lg:opacity-80'
                                 )}
                                 key={`review-${i}`}
                             >
