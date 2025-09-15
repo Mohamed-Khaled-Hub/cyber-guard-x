@@ -65,6 +65,31 @@ div.home-page {
         flex flex-col items-center gap-4;
     }
 
+    /* Academy Section */
+    section.academy-section {
+        @apply flex flex-col items-center gap-8 text-center;
+    }
+
+    section.academy-section h2 {
+        @apply text-2xl font-bold;
+    }
+
+    section.academy-section div.academy-content {
+        @apply w-full md:w-4/5 flex flex-col items-center gap-8;
+    }
+
+    section.academy-section div.academy-content div.academy-img-wrapper {
+        @apply w-full max-w-md overflow-hidden rounded-2xl shadow-md;
+    }
+
+    section.academy-section div.academy-content div.academy-img-wrapper img {
+        @apply w-full h-auto object-cover;
+    }
+
+    section.academy-section div.academy-content p {
+        @apply text-gray-600 text-lg;
+    }
+
     /* Our Statistics */
     section.our-statistics {
         @apply flex flex-col items-center gap-8;

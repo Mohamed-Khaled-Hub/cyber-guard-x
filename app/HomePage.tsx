@@ -11,10 +11,15 @@ import Counter from '@/src/components/UIRelated/Counter'
 import MiniServiceCard from '@/src/components/CardsRelated/MiniServiceCard'
 import PartnersSlider from '@/src/components/SlidersRelated/PartnersSlider'
 import AnimatedSection from '@/src/components/ContainersRelated/AnimatedSection'
+// Hooks
+import { useWebsiteInfo } from '@/src/providers/WebsiteInfoProvider'
 // Style
 import '@/src/styles/pages/page.css'
 
 export default function HomePage() {
+    // Contexts
+    const { academyUrl } = useWebsiteInfo()
+    // States
     const [visibleCount, setVisibleCount] = useState(3)
 
     useEffect(() => {
@@ -94,6 +99,17 @@ export default function HomePage() {
                 },
             ],
             button: { label: 'Explore Our Services', href: '/services' },
+        },
+        academy: {
+            title: 'CyberGuardX Academy',
+            img: '/assets/images/home-page/academy.jpg',
+            label: 'Academy Services',
+            description:
+                'CyberGuardX Academy provides world-class training in cybersecurity and software development, offering hands-on programs to help students and professionals excel in the tech industry.',
+            button: {
+                label: 'Visit Academy',
+                href: academyUrl,
+            },
         },
         ourStatistics: {
             title: 'Our Statistics',
@@ -231,6 +247,35 @@ export default function HomePage() {
                         <Button
                             label={homePageData.ourServices.button.label}
                             href={homePageData.ourServices.button.href}
+                            variant='service'
+                            className='bigger'
+                        />
+                    </motion.div>
+                </section>
+            </AnimatedSection>
+
+            {/* Academy Section */}
+            <AnimatedSection>
+                <section className='academy-section'>
+                    <motion.h2 {...homePageAnimations.fadeInUp}>
+                        {homePageData.academy.title}
+                    </motion.h2>
+                    <motion.div
+                        className='academy-content'
+                        {...homePageAnimations.fadeInUp}
+                    >
+                        <div className='academy-img-wrapper'>
+                            <Image
+                                width={500}
+                                height={300}
+                                src={homePageData.academy.img}
+                                alt={homePageData.academy.label}
+                            />
+                        </div>
+                        <p>{homePageData.academy.description}</p>
+                        <Button
+                            label={homePageData.academy.button.label}
+                            href={homePageData.academy.button.href}
                             variant='service'
                             className='bigger'
                         />

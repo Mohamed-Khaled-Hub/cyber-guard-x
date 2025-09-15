@@ -15,6 +15,7 @@ export type ServiceObject = {
     logo: string
     name: string
     type: 'software' | 'cyber'
+    link?: string // For the Academy link
     description: string
     extraInfo?: {
         imgSrc: string

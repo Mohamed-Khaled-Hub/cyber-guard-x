@@ -24,7 +24,8 @@ import '@/src/styles/components/FooterRelated/Footer.css'
 export default function Footer() {
     // Contexts
     const { getServices } = useCompanyData()
-    const { name, logoUrl, contact, socials, pages } = useWebsiteInfo()
+    const { name, logoUrl, contact, socials, pages, academyUrl } =
+        useWebsiteInfo()
     // States
     const [openPentest, setOpenPentest] = useState(false)
     const [services, setServices] = useState<ServiceObject[]>([])
@@ -46,9 +47,13 @@ export default function Footer() {
         ].includes(s.name)
     )
 
-    const otherServices = services
-        .filter((s) => !pentestServices.includes(s))
-        .slice(0, 4)
+    const otherServices = [
+        ...services.filter((s) => !pentestServices.includes(s)).slice(0, 4),
+        {
+            name: 'Security Training',
+            link: academyUrl,
+        },
+    ]
 
     return (
         <>
@@ -198,9 +203,16 @@ export default function Footer() {
                                     {otherServices.map((service, idx) => (
                                         <li key={`service-${idx}`}>
                                             <Link
-                                                href={`/services/${toKebabCase(
-                                                    service.name
-                                                )}`}
+                                                href={
+                                                    service.link
+                                                        ? service.link // academy uses full URL
+                                                        : `/services/${toKebabCase(service.name)}`
+                                                }
+                                                target={
+                                                    service.link
+                                                        ? '_blank'
+                                                        : '_self'
+                                                }
                                             >
                                                 {service.name}
                                             </Link>

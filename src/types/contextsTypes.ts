@@ -31,6 +31,9 @@ export type WebsiteInfoContextType = {
         linkedIn?: string
     }
 
+    // Other Related links
+    academyUrl: string
+
     // Pages (for nav/footer/etc.)
     pages: {
         label: string

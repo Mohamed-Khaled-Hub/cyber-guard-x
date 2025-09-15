@@ -21,7 +21,7 @@ import '@/src/styles/components/NavRelated/Nav.css'
 
 export default function Nav() {
     // Contexts
-    const { name, pages, logoUrl } = useWebsiteInfo()
+    const { name, pages, logoUrl, academyUrl } = useWebsiteInfo()
     const { getServices } = useCompanyData()
     // States
     const [scrolled, setScrolled] = useState(false)
@@ -91,9 +91,9 @@ export default function Nav() {
     )
 
     // Shared render for "other services" + explore link
-    const renderExtraServices = (isMobile = false) => (
-        <>
-            {services
+    const renderExtraServices = (isMobile = false) => {
+        const otherServices = [
+            ...services
                 .filter(
                     (s) =>
                         ![
@@ -102,33 +102,49 @@ export default function Nav() {
                             'Network Penetration Testing',
                         ].includes(s.name)
                 )
-                .slice(0, 4)
-                .map((service, idx) => (
+                .slice(0, 4),
+            {
+                name: 'Security Training',
+                link: academyUrl,
+            },
+        ]
+
+        return (
+            <>
+                {otherServices.map((service, idx) => (
                     <Link
                         key={`service-${idx}`}
-                        href={`/services/${service.name}`}
+                        href={
+                            service.link
+                                ? service.link // external academy link
+                                : `/services/${service.name
+                                      .toLowerCase()
+                                      .replace(/\s+/g, '-')}`
+                        }
                         className={isMobile ? 'mobile-link' : 'service-item'}
+                        target={service.link ? '_blank' : '_self'}
                         onClick={() => isMobile && setMenuOpen(false)}
                     >
                         {service.name}
                     </Link>
                 ))}
 
-            <Link
-                href={
-                    pages.find((p) => p.label.toLowerCase() === 'services')!
-                        .href
-                }
-                className={
-                    (isMobile ? 'mobile-link' : 'service-item') +
-                    ' underline underline-offset-2'
-                }
-                onClick={() => isMobile && setMenuOpen(false)}
-            >
-                Explore our services
-            </Link>
-        </>
-    )
+                <Link
+                    href={
+                        pages.find((p) => p.label.toLowerCase() === 'services')!
+                            .href
+                    }
+                    className={
+                        (isMobile ? 'mobile-link' : 'service-item') +
+                        ' underline underline-offset-2'
+                    }
+                    onClick={() => isMobile && setMenuOpen(false)}
+                >
+                    Explore our services
+                </Link>
+            </>
+        )
+    }
 
     return (
         <nav className='nav'>

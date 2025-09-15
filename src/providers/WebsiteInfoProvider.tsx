@@ -31,6 +31,7 @@ export function WebsiteInfoProvider({ children }: WebsiteInfoProviderProps) {
                     instagram: 'https://www.instagram.com',
                     linkedIn: 'https://www.linkedin.com/',
                 },
+                academyUrl: 'https://academy.cyberguardx.org/',
                 pages: [
                     // Main pages
                     { label: 'Home', href: '/' },
